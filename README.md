@@ -35,7 +35,7 @@
 | component hierarchy                                                                             |
 
 ## <div align="left" style='color: #240046'> 🖇 Entity Relation Diagram 🖇  </div>
-| ![Beveraholic Component Hierarchy](client/src/images/component-hierarchy/component_hierarchy.svg) |
+| ![Beveraholic Component Hierarchy](client/src/images/erd/erd.svg) |
 | ----------------------------------------------------------------------------------------------- |
 | Entity Relation Diagram                                                                            |
 
