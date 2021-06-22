@@ -6,12 +6,6 @@
 
 <p>Beveraholic is an enjoyable web application that allows users to add and find their favorite alcoholic/non-alcoholic beverages. Users will be able to pick and make the most popular and tastiest drinks in the world. Each beverage item will have an image, name, and alcoholic content level as well as a view button with preparation steps. 
 </p>
-<p>
-  Please be adviced to drink responsible for the alcoholic beverages.
-</p>
-
-
-
 
 ## <div align="left" style='color: #240046'> 🛠 Wireframing 🛠 </div>
 | Logo                                                         |                                                              |
