@@ -1,4 +1,4 @@
-# <div align="center">![Beveraholic](client/src/images/logos/beveraholic_banner.png) </div>
+# <div align="center">![Beveraholic](client/src/images/logos/Beveraholic_Banner.png) </div>
 
 ## <div align="left" style='color: #240046'> 🔎 Description 🔍
 
