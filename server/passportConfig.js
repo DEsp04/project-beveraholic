@@ -9,7 +9,7 @@ const localStrategy = require('passport-local').Strategy;
 
 
 //--- function below will use localStrategy to help find a matching username and password in the User database ---
-
+passport.use();
 
 
 

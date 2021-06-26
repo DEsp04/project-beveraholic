@@ -35,7 +35,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 db.on("error", console.error.bind(console, "MongoDB connection error"));
 
+//Using express session middleware
+app.use(
+  session({
+    secret: "secretcode",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
+app.use(cookieParser("secretcode"))
+
+//refreshes passport when there are new routes added
+app.use(passport.initialize());
+
+//passport will connect to the session collection of express and use this collection as user authentication mechanism
+app.use(passport.session())
+
+//passport will be pass in to the function in the passportConfig file
+require("./passportConfig")(passport);
 
 
 //----------------------------End of Middleware-----------------
