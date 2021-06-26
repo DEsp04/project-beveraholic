@@ -5,7 +5,7 @@ const router = Router();
 
 
 //post request for login, register and user.
-app.post("/register", cont)
+app.post("/register", controllers.createRegistration)
 
 
 

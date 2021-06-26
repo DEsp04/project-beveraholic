@@ -17,9 +17,6 @@ const passportLocal = require("passport-local").Strategy;
 //Cookie store data in the Browser
 const cookieParser = require("cookie-parser");
 
-//Hash password
-const bcrypt = require("bcryptjs");
-
 //Session store large data in the server
 const session = require("express-session");
 
