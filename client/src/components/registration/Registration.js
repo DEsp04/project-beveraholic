@@ -34,7 +34,7 @@ export default function Registration() {
         onChange={ (e) => setRegisterPassword(e.target.value)}
       />
 
-      <button >Sign In</button>
+      <button onClick={register}>Sign In</button>
     </div>
   )
 }
