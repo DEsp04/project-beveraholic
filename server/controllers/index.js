@@ -28,6 +28,7 @@ const createRegistration = async (req, res) => {
 };
 
 const loginUser = async (req, res, next) => {
+  console.log(req.body)
   try {
     await passport.authenticate("local", (err, user, info) => {
       if (err) throw err;
@@ -36,8 +37,8 @@ const loginUser = async (req, res, next) => {
       else {
         req.logIn(user, (err) => {
           if (err) throw err;
-          res.send("Successfully Authenticated");
-          console.log(req.user);
+          res.send(req.user.username);
+          console.log("Here", req.user);
         })
       }
     })(req, res, next);
