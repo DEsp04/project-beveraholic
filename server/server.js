@@ -17,23 +17,34 @@ const passportLocal = require("passport-local").Strategy;
 //Cookie store data in the Browser
 const cookieParser = require("cookie-parser");
 
-//Hash password
-const bcrypt = require("bcryptjs");
-
 //Session store large data in the server
 const session = require("express-session");
+
+const routes = require("./routes");
+//log message on console when you make request
+const logger = require("morgan");
 
 const app = express();
 const User = require("./models/user");
 
+
+
 //----------------------------End of Import-----------------
 
 //Middleware
-
+db.on("error", console.error.bind(console, "MongoDB connection error"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-db.on("error", console.error.bind(console, "MongoDB connection error"));
+app.use(logger("dev"));
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
+
 
 //Using express session middleware
 app.use(
@@ -59,6 +70,8 @@ require("./passportConfig")(passport);
 //----------------------------End of Middleware-----------------
 
 //Routes
+
+app.use("/api", routes)
 
 
 
