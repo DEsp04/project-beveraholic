@@ -1,13 +1,28 @@
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Signup from "./screens/signup/Signup";
 import Login from "./screens/login/Login";
 import Home from "./screens/home/Home";
 import Favorites from "./screens/favorites/Favorites";
 import About from "./screens/about/About";
 import User from "./screens/user/User";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const history = useHistory();
+
+  
+
+  const ayman = localStorage.getItem("userInfo")
+  console.log("this is from app.js:", ayman)
+
+  useEffect(() => {
+    if (ayman) {
+      history.push("/home")
+    }
+  }, [])
+
   return (
     <div className="App">
       <main>
