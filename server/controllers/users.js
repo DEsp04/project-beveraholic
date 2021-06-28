@@ -1,5 +1,5 @@
 //User ontrollers for Backend
-const User = require("../models/users");
+const User = require("../models/user");
 //Hash password
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
