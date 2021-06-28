@@ -1,6 +1,6 @@
-//Routes to backend
+//User routes to backend
 const { Router } = require("express");
-const controllers = require("../controllers");
+const controllers = require("../controllers/user");
 const router = Router();
 
 //post request for login, register and user.
