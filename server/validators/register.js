@@ -10,6 +10,7 @@ const registerValidation = () => {
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
 
+
   //check if username is valid
   if (validator.isEmpty(data.username)) {
     errors.username = "Username is required!";
