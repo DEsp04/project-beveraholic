@@ -9,9 +9,6 @@ const registerValidation = () => {
   data.username = !isEmpty(data.username) ? data.username : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
-  data.passwordConfirm = !isEmpty(data.asswordConfirm)
-    ? data.asswordConfirm
-    : "";
 
   //check if name is valid
   if (validator.isEmpty(data.name)) {
@@ -29,15 +26,8 @@ const registerValidation = () => {
   if (validator.isEmpty(data.password)) {
     errors.password = "Password is required";
   }
-  if (validator.isEmpty(data.passwordConfirm)) {
-    errors.passwordConfirm = "Password is required";
-  }
   if (!validator.isLength(data.password, { min: 12, max: 32 })) {
     errors.password = "Password must be at least 12 characters";
-  }
-  //check if password and passwordConfirm match
-  if (validator.isEmpty(data.password)) {
-    errors.password = "Password field is required";
   }
 
   return {
