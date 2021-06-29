@@ -1,6 +1,6 @@
 //--- Authenticating users by implementing passport strategy called 'localStrategy'
 
-const User = require("./models/user");
+const User = require("../models/user");
 
 //--- hash passwords ---
 const bcrypt = require("bcryptjs");

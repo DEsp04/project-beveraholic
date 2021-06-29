@@ -15,8 +15,7 @@ let MONGODB_URI =
 //   process.env.MONGODB_URI ||
 //   "mongodb://127.0.0.1:27017/beverageDatabase";
 
-mongoose
-  .connect(MONGODB_URI, {
+mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })

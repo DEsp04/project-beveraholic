@@ -17,8 +17,8 @@ const cookieParser = require("cookie-parser");
 //Session store large data in the server
 const session = require("express-session");
 
-// const users = require("./routes/users");
-// const beverages = require("./routes/beverages");
+const routes = require("./routes")
+
 
 //----------------------------End of Import-----------------
 
