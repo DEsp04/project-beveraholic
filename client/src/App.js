@@ -9,6 +9,7 @@ import User from "./screens/user/User";
 import { useEffect, useState } from "react";
 
 function App() {
+
   const history = useHistory();
 
   const ayman = localStorage.getItem("userInfo");
@@ -19,6 +20,7 @@ function App() {
       history.push("/home");
     }
   }, []);
+
 
   return (
     <div className="App">
