@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../navbar/Nav";
+import Nav from "../navbar/nav";
 import UserMenu from "../userMenu/UserMenu";
 
 export default function Header() {

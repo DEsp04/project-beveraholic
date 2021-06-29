@@ -1,10 +1,105 @@
 import React from "react";
-import Layout from "../../components/layout/Layout";
-
+// import Layout from "../../components/layout/Layout";
+import shan from "../../images/team/shan.png";
+import angel from "../../images/team/angel.png";
+import david from "../../images/team/david.png";
+import katherine from "../../images/team/katherine.png";
 export default function about() {
+  const team = [
+    {
+      firstName: "Angel",
+      lastName: "Fernández",
+      teamTitle: "Web Developer",
+      teamImage: angel,
+      linkedin: "https://www.linkedin.com/in/angelbienvenidofernandez/",
+      gitHub: "https://github.com/Avixph",
+    },
+    {
+      firstName: "Katherine",
+      lastName: "Fernandez",
+      teamTitle: "Product Designer",
+      teamImage: katherine,
+      linkedin: "https://www.linkedin.com/in/katfernandez22/",
+      gitHub: "https://github.com/katfernandez22",
+    },
+    {
+      firstName: "Shan",
+      lastName: "Siddiqui",
+      teamTitle: "Web Developer",
+      teamImage: shan,
+      linkedin: "https://www.linkedin.com/in/ssiddiqui007",
+      gitHub: "https://github.com/shansiddiqui94",
+    },
+    {
+      firstName: "David",
+      lastName: "Espinal",
+      teamTitle: "Web Developer",
+      teamImage: david,
+      linkedin: "https://www.linkedin.com/in/david-espinal-28b91a1b7/",
+      gitHub: "https://github.com/DEsp04",
+    },
+  ];
   return (
-    <Layout>
-      <h1>About Us</h1>
-    </Layout>
+    <div>
+      <h1 class="text-center text-4xl">What is Beveraholic?</h1>
+      <p class="text-center pt-5">
+        Beveraholic is an enjoyable web application that allows users to add and
+        find their favorite alcoholic/non-alcoholic beverages. Users will be
+        able to pick and make the most popular and tastiest drinks in the world.
+        Each beverage item will have an image, name, and alcoholic content level
+        as well as a view button with preparation steps.
+      </p>
+      <br></br>
+      <h1 class="text-center text-3xl">The Team:</h1>
+      <br></br>
+      <div class="flex flex-wrap items-center justify-center">
+        <br />
+        {team.map((member) => {
+          return (
+            <div class="text-center px-8 m-1 p-2 ">
+              <img
+                class="h-40 w-auto rounded-none 100%"
+                src={member.teamImage}
+                alt=""
+              />
+              <p className="teamname">{`${member.firstName} ${member.lastName}`}</p>
+              <p className="title">{member.teamTitle}</p>
+              <div class="flex flex-row justify-between">
+                <a href={member.linkedin}>
+                  <img
+                    class="h-8
+                  w-8"
+                    src="https://www.svgrepo.com/show/144550/linkedin.svg"
+                    alt={member.linkedIn}
+                  />
+                </a>
+                <a href={member.gitHub}>
+                  <img
+                    class="h-8 w-8"
+                    src="https://www.svgrepo.com/show/305241/github.svg"
+                    alt={member.gitHub}
+                  />
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
+
+// </p>
+// <h1>The Team</h1>
+// <div>
+//   <ul>
+//     <li>
+//       <a href="https://www.linkedin.com">
+//         <img alt="linkedin" src={shan} width="100" height="100"></img>
+//       </a>
+//     </li>
+//     <li></li>
+//     <li></li>
+//   </ul>
+// </div>
+// </Layout>
