@@ -5,6 +5,7 @@ export default function Registration() {
   //hooks to capture user inputs
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
 
   const register = () => {
     axios({
@@ -26,7 +27,7 @@ export default function Registration() {
       />
       <input
         placeholder="Email Address"
-        onChange={(e) => setRegisterUsername(e.target.value)}
+        onChange={(e) => setRegisterEmail(e.target.value)}
       />
       <input
         placeholder="Password"

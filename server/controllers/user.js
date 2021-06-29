@@ -6,18 +6,18 @@ const jwt = require("jsonwebtoken");
 const passport = require("passport");
 
 // Load input validation
-const validateRegistration = require("../validators/register");
-const validateLogin = require("../validators/login");
+// const validateRegistration = require("../validators/register");
+// const validateLogin = require("../validators/login");
 
 const createRegistration = async (req, res) => {
   try {
     // Form validation
-    const { errors, isValid } = validateRegistration(req.body);
-
-    // Check validation
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
+    // const { errors, isValid } = validateRegistration(req.body);
+    // console.log(isValid)
+    // // Check validation
+    // if (!isValid) {
+    //   return res.status(400).json(errors);
+    // }
 
     await User.findOne({ username: req.body.username }, async (err, doc) => {
       if (err) throw err;
@@ -42,12 +42,12 @@ const loginUser = async (req, res, next) => {
   console.log(req.body);
   try {
     // Form validation
-    const { errors, isValid } = validateLogin(req.body);
+    // const { errors, isValid } = validateLogin(req.body);
 
-    // Check validation
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
+    // // Check validation
+    // if (!isValid) {
+    //   return res.status(400).json(errors);
+    // }
 
     await passport.authenticate("local", (err, user, info) => {
       if (err) throw err;
