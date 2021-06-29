@@ -6,26 +6,26 @@ const Beverage = require("../models/beverage");
 
 const createCategory = async (req, res) => {
   try {
-    passport.authenticate(
-      "local",
-      // {
-      // successRedirect: "/",
-      // failureRedirect: "/login",
-      // successFlash: "Welcome!",
-      // failureFlash: "Invalid username or password.",
-      // }
-      (req, res, err) => {
-        if (err) throw err;
-        if (!user) res.send("No User Exists");
-        else {
-          req.logIn(user, (err) => {
-            if (err) throw err;
-            res.send(req.user.username);
-            console.log("Here", req.user);
-          });
-        }
-      }
-    );
+    // passport.authenticate(
+    //   "local",
+    //   // {
+    //   // successRedirect: "/",
+    //   // failureRedirect: "/login",
+    //   // successFlash: "Welcome!",
+    //   // failureFlash: "Invalid username or password.",
+    //   // }
+    //   (req, res, err) => {
+    //     if (err) throw err;
+    //     if (!user) res.send("No User Exists");
+    //     else {
+    //       req.logIn(user, (err) => {
+    //         if (err) throw err;
+    //         res.send(req.user.username);
+    //         console.log("Here", req.user);
+    //       });
+    //     }
+    //   }
+    // );
     const category = await new BeverageCategory(req.body);
     await category.save();
     return res.status(201).json({ category });
