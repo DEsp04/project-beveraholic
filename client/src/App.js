@@ -12,16 +12,15 @@ function App() {
 
   const history = useHistory();
 
-  
-
-  const ayman = localStorage.getItem("userInfo")
-  console.log("this is from app.js:", ayman)
+  const ayman = localStorage.getItem("userInfo");
+  console.log("this is from app.js:", ayman);
 
   useEffect(() => {
     if (ayman) {
-      history.push("/home")
+      history.push("/home");
     }
-  }, [])
+  }, []);
+
 
   return (
     <div className="App">
