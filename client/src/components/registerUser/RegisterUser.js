@@ -8,7 +8,7 @@ export default function Registration() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const [registerEmail, setRegisterEmail] = useState("");
+ 
 
   const register = () => {
     axios({

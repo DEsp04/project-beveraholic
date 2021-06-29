@@ -2,9 +2,9 @@ import "./App.css";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Signup from "./screens/signup/Signup";
 import Login from "./screens/login/Login";
-import Home from "./screens/home/Home";
+import Home from "./screens/home/home";
 import Favorites from "./screens/favorites/Favorites";
-import About from "./screens/about/About";
+import About from "./screens/about/about";
 import User from "./screens/user/User";
 import { useEffect, useState } from "react";
 
