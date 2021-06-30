@@ -16,14 +16,15 @@ const navigation = [
   { name: "Favorite Recipes", to: "/favorites", current: false },
   { name: " About", to: "/about-us", current: false },
 ];
-const userNavigation = [
-  { name: "Profile", to: "#" },
-  { name: "Log out", to: "#" },
-];
+const userNavigation = [{ name: "Log out", to: "#" }];
+
+const dropDown = (...classes) => {
+  return classes.filter(Boolean).join(" ");
+};
 
 export default function Header() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-full bg-white">
       <Disclosure as="nav" className="bg-white border-b border-gray-200">
         {({ open }) => (
           <>
@@ -39,7 +40,7 @@ export default function Header() {
                     <img
                       className="hidden lg:block h-14 w-auto"
                       src={logo}
-                      alt="Workflow"
+                      alt="Beveraholic"
                     />
                   </div>
                   <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
@@ -47,7 +48,7 @@ export default function Header() {
                       <NavLink
                         key={item.name}
                         to={item.to}
-                        className={Header(
+                        className={dropDown(
                           item.current
                             ? "border-indigo-500 text-gray-900"
                             : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
@@ -94,7 +95,7 @@ export default function Header() {
                                 {({ active }) => (
                                   <a
                                     href={item.to}
-                                    className={Header(
+                                    className={dropDown(
                                       active ? "bg-gray-100" : "",
                                       "block px-4 py-2 text-sm text-gray-700"
                                     )}
@@ -130,7 +131,7 @@ export default function Header() {
                   <NavLink
                     key={item.name}
                     to={item.to}
-                    className={Header(
+                    className={dropDown(
                       item.current
                         ? "bg-indigo-50 border-indigo-500 text-indigo-700"
                         : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800",
