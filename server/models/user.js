@@ -1,5 +1,4 @@
-//--- User Schema to post users' name and password to database ---
-
+/*--------------------- User Schema to post users' name and password to database ---------------------*/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

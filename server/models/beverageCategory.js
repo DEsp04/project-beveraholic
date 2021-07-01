@@ -1,5 +1,4 @@
-//--- Beverage category Schema to post users' name and password to database ---
-
+/*--------------------- Beverage category Schema to post users' name and password to database ---------------------*/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
