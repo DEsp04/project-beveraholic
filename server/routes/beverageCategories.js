@@ -1,36 +1,38 @@
 /*--------------------- Beverage category routes ---------------------*/
 const { Router } = require("express");
-const beverageRouter = Router();
+const beverageCategoryRouter = Router();
 const beverageCategoryControllers = require("../controllers/beverageCategories");
 
-beverageRouter.post(
+beverageCategoryRouter.post(
   "/beverageCategories",
   beverageCategoryControllers.createCategory
 );
 
-beverageRouter.get(
+beverageCategoryRouter.get(
   "/beverageCategories",
   beverageCategoryControllers.getAllCategories
 );
 
-beverageRouter.get(
+beverageCategoryRouter.get(
   "/beverageCategories/:id",
   beverageCategoryControllers.getCategoryByID
 );
 
-beverageRouter.put(
+beverageCategoryRouter.put(
   "/beverageCategories/:id",
   beverageCategoryControllers.updateCategory
 );
 
-beverageRouter.delete(
+beverageCategoryRouter.delete(
   "/beverageCategories/:id",
   beverageCategoryControllers.deleteCategory
 );
 
 /************************/
-beverageRouter.get(
+beverageCategoryRouter.get(
   "/beverageCategories/:id/beverages",
   beverageCategoryControllers.getAllBeveragesByCategories
 );
 /***********************/
+
+module.exports = beverageCategoryRouter;
