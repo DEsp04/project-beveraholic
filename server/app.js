@@ -25,8 +25,8 @@ app.use(cors());
 
 app.get("/", (req, res) => res.send("API is running!"));
 
-app.use("/api/user", userRoutes);
-app.use("/api/beverages", beverageRoutes);
-app.use("/api/beverageCategories", beverageCategoryRoutes);
+app.use("/api", userRoutes);
+app.use("/api", beverageRoutes);
+// app.use("/api/beverageCategories", beverageCategoryRoutes);
 
 module.exports = app;

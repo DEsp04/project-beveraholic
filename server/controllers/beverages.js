@@ -14,6 +14,7 @@ const createBeverage = async (req, res) => {
 const getAllBeverages = async (req, res) => {
   try {
     const beverages = await Beverage.find();
+    console.log(beverages);
     return res.status(200).json({ beverages });
   } catch (error) {
     return res.status(500).send(eror.message);

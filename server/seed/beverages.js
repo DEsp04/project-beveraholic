@@ -1,47 +1,16 @@
 //Seed for backend
 const db = require("../db");
 const Beverage = require("../models/beverage");
-const BeverageCategory = require("../models/beverageCategory");
 
 db.on("error", console.error.bind(console, "MongoDB Connection Error!"));
 
 const main = async () => {
-  const beverageCategory1 = await new BeverageCategory({
-    category_name: "Cocktail",
-  });
-  beverageCategory1.save();
-
-  const beverageCategory2 = await new BeverageCategory({
-    category_name: "Coffee/Tea",
-  });
-  beverageCategory2.save();
-
-  const beverageCategory3 = await new BeverageCategory({
-    category_name: "Milk/Float/Shake",
-  });
-  beverageCategory3.save();
-
-  const beverageCategory4 = await new BeverageCategory({
-    category_name: "Other/Unknown",
-  });
-  beverageCategory4.save();
-
-  const beverageCategory5 = await new BeverageCategory({
-    category_name: "Shot",
-  });
-  beverageCategory5.save();
-
-  const beverageCategory6 = await new BeverageCategory({
-    category_name: "Soft Drink/Soda",
-  });
-  beverageCategory6.save();
-
   const beverages = [
     {
       beverage_name: "57 Chevy with a White License Plate",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/qyyvtu1468878544.jpg",
-      beverage_category: beverageCategory1._id,
+      beverage_category: "Cocktail",
       alcohol_content: "Alcoholic",
       ingredients: "Creme de Cacao, Vodka",
       instruction:
@@ -51,7 +20,7 @@ const main = async () => {
       beverage_name: "Absolut Summertime",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/wysqut1461867176.jpg",
-      beverage_category: beverageCategory1._id,
+      beverage_category: "Cocktail",
       alcohol_content: "Alcoholic",
       ingredients: "Absolut Citrons, Sweet and sour, Sprite, Lemon",
       instruction:
@@ -61,7 +30,7 @@ const main = async () => {
       beverage_name: "Frappé",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/vqwryq1441245927.jpg",
-      beverage_category: beverageCategory2._id,
+      beverage_category: "Coffee / Tea",
       alcohol_content: "Non Alcoholic",
       ingredients: "Coffee, Milk, Sugar",
       instruction:
@@ -71,7 +40,7 @@ const main = async () => {
       beverage_name: "Masala Chai",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/wysqut1461867176.jpg",
-      beverage_category: beverageCategory2._id,
+      beverage_category: "Coffee / Tea",
       alcohol_content: "Non Alcoholic",
       ingredients:
         "Water, Tea, Ginger, Cardamon, Cloves, Cinnamon, Black Pepper, Sugar, Milk",
@@ -82,7 +51,7 @@ const main = async () => {
       beverage_name: "Banana Strawberry Shake",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/qyyvtu1468878544.jpg",
-      beverage_category: beverageCategory3._id,
+      beverage_category: "Milk / Float / Shake",
       alcohol_content: "Non Alcoholic",
       ingredients: "Strawberries, Banana, Yohgurt, Milk, Honey",
       instruction: "Blend all together in a blender until smooth.",
@@ -91,7 +60,7 @@ const main = async () => {
       beverage_name: "Black Forest Shake",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/xxtxsu1472720505.jpg",
-      beverage_category: beverageCategory3._id,
+      beverage_category: "Milk / Float / Shake",
       alcohol_content: "Alcoholic",
       ingredients: "Ice, Chocolate Syrup, Cherry Brandy, Vodka, Milk",
       instruction:
@@ -101,7 +70,7 @@ const main = async () => {
       beverage_name: "Amaretto Stone Sour",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/xwryyx1472719921.jpg",
-      beverage_category: beverageCategory4._id,
+      beverage_category: "Other / Unknown",
       alcohol_content: "Alcoholic",
       ingredients: "Amaretto, Sour mix, Orange Juice",
       instruction: "Shake and Serve over ice",
@@ -110,7 +79,7 @@ const main = async () => {
       beverage_name: "Grape lemon pineapple Smoothie",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/54z5h71487603583.jpg",
-      beverage_category: beverageCategory4._id,
+      beverage_category: "Other / Unknown",
       alcohol_content: "Alcoholic",
       ingredients: "Grapes, Lemon, Pineapple",
       instruction: "Throw everything into a blender and liquify.",
@@ -119,7 +88,7 @@ const main = async () => {
       beverage_name: "747",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/xxsxqy1472668106.jpg",
-      beverage_category: beverageCategory5._id,
+      beverage_category: "Shot",
       alcohol_content: "Alcoholic",
       ingredients: "Kahlua, Baileys Irish, Cream, Frangelico",
       instruction:
@@ -129,7 +98,7 @@ const main = async () => {
       beverage_name: "Kool-Aid Slammer",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/kugu2m1504735473.jpg",
-      beverage_category: beverageCategory5._id,
+      beverage_category: "Shot",
       alcohol_content: "Alcoholic",
       ingredients: "Kool-Aid, Vodka",
       instruction:
@@ -139,7 +108,7 @@ const main = async () => {
       beverage_name: "Bleeding Surgeon",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/usuvvr1472719118.jpg",
-      beverage_category: beverageCategory6._id,
+      beverage_category: "Soft Drink / Soda",
       alcohol_content: "Alcoholic",
       ingredients: "Dark Rum, Orange, Surge, Cranberry Juice",
       instruction:
@@ -149,7 +118,7 @@ const main = async () => {
       beverage_name: "Darkwood Sling",
       beverage_image:
         "https://www.thecocktaildb.com/images/media/drink/sxxsyq1472719303.jpg",
-      beverage_category: beverageCategory6._id,
+      beverage_category: "Soft Drink / Soda",
       alcohol_content: "Alcoholic",
       ingredients: "Cherry Heering, Soda Water, Orange Juice, Ice",
       instruction:
