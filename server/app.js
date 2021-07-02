@@ -5,22 +5,11 @@ const express = require("express");
 //specific local host have access to the server
 const cors = require("cors");
 
-//Integrates with express and uses strategies to authenticate an user
-const passport = require("passport");
+const logger = require("morgan");
 
-//One of many passport strategies to authenticate users
-// const passportLocal = require("passport-local").Strategy;
-
-//Cookie store data in the Browser
-const cookieParser = require("cookie-parser");
-
-//Session store large data in the server
-const session = require("express-session");
-
-const routes = require("./routes")
-
-
-//----------------------------End of Import-----------------
+const userRoutes = require("./routes/users");
+const beverageRoutes = require("./routes/beverages");
+const beverageCategoryRoutes = require("./routes/beverageCategories");
 
 const app = express();
 
@@ -28,36 +17,16 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
+// app.use(express.json({ extended: false }));
 
-app.use(
-  session({
-    secret: "secretcode",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
+app.use(logger("dev"));
 
-app.use(cookieParser("secretcode"));
+app.use(cors());
 
-//refreshes passport when there are new routes added
-app.use(passport.initialize());
+app.get("/", (req, res) => res.send("API is running!"));
 
-//passport will connect to the session collection of express and use this collection as user authentication mechanism
-app.use(passport.session());
-
-//passport will be pass in to the function in the passportConfig file
-require("./config/passport")(passport);
-
-app.use("/api", routes);
-
-// app.use("/api/users", users);
-
-// app.use("/api/beverages", beverages);
+app.use("/api", userRoutes);
+app.use("/api", beverageRoutes);
+// app.use("/api/beverageCategories", beverageCategoryRoutes);
 
 module.exports = app;
