@@ -19,3 +19,29 @@ exports.loginValidator = () => {
     check("password").exists().withMessage("password is required"),
   ];
 };
+
+exports.beverageValidator = () => {
+  return [
+    check("beverage_name")
+      .notEmpty()
+      .withMessage("Beverage name is required")
+      .not(),
+    check("beverage_image")
+      .notEmpty()
+      .withMessage("Beverage image is required")
+      .not(),
+    check("beverage_category")
+      .notEmpty()
+      .withMessage("Beverage category is required")
+      .not(),
+    check("alcohol_content")
+      .notEmpty()
+      .withMessage("alcohol content is required")
+      .not(),
+    check("ingredients").notEmpty().withMessage("ingredient is required").not(),
+    check("instruction")
+      .notEmpty()
+      .withMessage("instruction is required")
+      .not(),
+  ];
+};
