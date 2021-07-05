@@ -127,8 +127,8 @@ const deleteBeverage = async (req, res) => {
     await deletedBeverage.remove();
     
     res.json({ msg: "Beverage remove" });
-  } catch (error) {
-    console.error(error.message);
+  } catch (err) {
+    console.error(err.message);
     return res.status(500).send("Server Error");
   }
 };
