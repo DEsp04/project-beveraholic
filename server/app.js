@@ -9,7 +9,6 @@ const logger = require("morgan");
 
 const userRoutes = require("./routes/users");
 const beverageRoutes = require("./routes/beverages");
-const beverageCategoryRoutes = require("./routes/beverageCategories");
 
 const app = express();
 
