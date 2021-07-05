@@ -8,12 +8,30 @@ const Beverage = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
     },
-    beverage_name: { type: String, required: true },
-    beverage_image: { type: String, required: true },
-    beverage_category: { type: String, required: true },
-    alcohol_content: { type: String, required: true },
-    ingredients: { type: String, required: true },
-    instruction: { type: String, required: true },
+    beverage_name: {
+      type: String,
+      required: true
+    },
+    beverage_image: {
+      type: String,
+      required: true
+    },
+    beverage_category: {
+      type: String,
+      required: true
+    },
+    alcohol_content: {
+      type: String,
+      required: true
+    },
+    ingredients: {
+      type: String,
+      required: true
+    },
+    instruction: {
+      type: String, 
+      required: true
+    },
   },
   { timestamps: true }
 );
