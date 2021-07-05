@@ -4,6 +4,10 @@ const Schema = mongoose.Schema;
 
 const Beverage = new Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
     beverage_name: { type: String, required: true },
     beverage_image: { type: String, required: true },
     beverage_category: { type: String, required: true },

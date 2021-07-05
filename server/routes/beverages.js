@@ -2,15 +2,32 @@
 const { Router } = require("express");
 const beverageRouter = Router();
 const beverageControllers = require("../controllers/beverages");
+const { beverageValidator } = require("../validators/index");
+const auth = require("../config/authentication");
 
-beverageRouter.post("/beverages", beverageControllers.createBeverage);
+beverageRouter.post(
+  "/beverages",
+  auth,
+  beverageValidator(),
+  beverageControllers.createBeverage
+);
 
 beverageRouter.get("/beverages", beverageControllers.getAllBeverages);
 
-beverageRouter.get("/beverages/:id", beverageControllers.getBeverageByID);
+beverageRouter.get(
+  "/:user_id/beverages",
+  auth,
+  beverageControllers.getAllBeveragesByCurrentUser
+);
 
-beverageRouter.put("/beverages/:id", beverageControllers.updateBeverage);
+beverageRouter.get("/beverages/:id", auth, beverageControllers.getBeverageByID);
 
-beverageRouter.delete("/beverages/:id", beverageControllers.deleteBeverage);
+beverageRouter.put("/beverages/:id", auth, beverageControllers.updateBeverage);
+
+beverageRouter.delete(
+  "/beverages/:id",
+  auth,
+  beverageControllers.deleteBeverage
+);
 
 module.exports = beverageRouter;
