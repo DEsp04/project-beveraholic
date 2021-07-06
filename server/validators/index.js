@@ -1,7 +1,7 @@
 /*--------------------- This method create custom express validator using middleware ---------------------*/
 const { check } = require("express-validator");
 
-exports.registerValidator = () => {
+const registerValidator = () => {
   return [
     check("username").notEmpty().withMessage("username is required").not(),
     check("email").notEmpty().withMessage("Email is required").not(),
@@ -13,14 +13,14 @@ exports.registerValidator = () => {
   ];
 };
 
-exports.loginValidator = () => {
+const loginValidator = () => {
   return [
     check("email").isEmail().withMessage("email is required"),
     check("password").exists().withMessage("password is required"),
   ];
 };
 
-exports.beverageValidator = () => {
+const beverageValidator = () => {
   return [
     check("beverage_name")
       .notEmpty()
@@ -44,4 +44,10 @@ exports.beverageValidator = () => {
       .withMessage("instruction is required")
       .not(),
   ];
+};
+
+module.exports = {
+  registerValidator,
+  loginValidator,
+  beverageValidator,
 };
