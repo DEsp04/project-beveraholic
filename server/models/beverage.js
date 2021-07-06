@@ -10,27 +10,27 @@ const Beverage = new Schema(
     },
     beverage_name: {
       type: String,
-      required: true
+      required: true,
     },
     beverage_image: {
       type: String,
-      required: true
+      required: true,
     },
     beverage_category: {
       type: String,
-      required: true
+      required: true,
     },
     alcohol_content: {
       type: String,
-      required: true
+      required: true,
     },
     ingredients: {
       type: String,
-      required: true
+      required: true,
     },
     instruction: {
-      type: String, 
-      required: true
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }
