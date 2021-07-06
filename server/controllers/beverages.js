@@ -4,9 +4,11 @@ const Beverage = require("../models/beverage");
 
 const createBeverage = async (req, res) => {
   const errors = validationResult(req);
+
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
+  
   const {
     beverage_name,
     beverage_image,
@@ -15,6 +17,7 @@ const createBeverage = async (req, res) => {
     ingredients,
     instruction,
   } = req.body;
+
   try {
     const newBeverage = new Beverage({
       beverage_name,
@@ -25,10 +28,13 @@ const createBeverage = async (req, res) => {
       instruction,
       user: req.user.id,
     });
+
     const beverage = await new newBeverage.save();
+
     res.json(beverage);
-  } catch (error) {
-    console.error(error.message);
+
+  } catch (err) {
+    console.error(err.message);
     return res.status(500).send("Server Error");
   }
 };
@@ -43,7 +49,7 @@ const getAllBeverages = async (req, res) => {
       .populate("user", "username");
     console.log(beverages);
     res.json(beverages);
-  } catch (error) {
+  } catch (err) {
     console.error(err.message);
     return res.status(500).send("Server Error");
   }
@@ -66,12 +72,16 @@ const getAllBeveragesByCurrentUser = async (req, res) => {
 const getBeverageByID = async (req, res) => {
   try {
     const { id } = req.params;
+
     const beverage = await Beverage.findById(id).populate("user", "username");
+
     if (!beverage) {
       return res.status(404).json({ msg: "Beverage not found" });
     }
+
     res.json(beverage);
-  } catch (error) {
+  } catch (err) {
+    console.error(err.message)
     return res.status(500).send("Server Error");
   }
 };
@@ -83,15 +93,19 @@ const updateBeverage = async (req, res) => {
       req.body,
       { new: true }
     );
+
     if (!beverage) {
       return res.status(404).json({ msg: "Beverage not found" });
     }
+
     if (beverage.user.toString() !== req.user.id) {
       return res.status(401).json({ msg: "User not authorized" });
     }
+
     res.json(beverage);
-  } catch (error) {
-    console.error(error.message);
+
+  } catch (err) {
+    console.error(err.message);
     return res.status(500).send("Server Error");
   }
 };
@@ -99,16 +113,22 @@ const updateBeverage = async (req, res) => {
 const deleteBeverage = async (req, res) => {
   try {
     const { id } = req.params;
+
     const deletedBeverage = await Beverage.findById(id);
+
     if (!deletedBeverage) {
       return res.status(404).json({ msg: "Beverage not found" });
     }
+
     if (deletedBeverage.user.toString() !== req.user.id) {
       return res.status(401).json({ msg: "User not authorized" });
     }
+
     await deletedBeverage.remove();
-  } catch (error) {
-    console.error(error.message);
+    
+    res.json({ msg: "Beverage remove" });
+  } catch (err) {
+    console.error(err.message);
     return res.status(500).send("Server Error");
   }
 };
