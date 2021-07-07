@@ -1,16 +1,37 @@
-//--- Beverage Schema to post users' name and password to database ---
-
+/*--------------------- Beverage Schema to post users' name and password to database ---------------------*/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Beverage = new Schema(
   {
-    beverage_name: { type: String, required: true },
-    beverage_image: { type: String, required: true },
-    category_name: { type: Schema.Types.ObjectId, ref: "beverage_categories" },
-    alcohol_content: { type: String, required: true },
-    ingredients: { type: String, required: true },
-    instruction: { type: String, required: true },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
+    beverage_name: {
+      type: String,
+      required: true,
+    },
+    beverage_image: {
+      type: String,
+      required: true,
+    },
+    beverage_category: {
+      type: String,
+      required: true,
+    },
+    alcohol_content: {
+      type: String,
+      required: true,
+    },
+    ingredients: {
+      type: String,
+      required: true,
+    },
+    instruction: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
