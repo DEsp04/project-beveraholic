@@ -50,8 +50,8 @@ export default function about() {
         </div>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div>
-            <h1 class="text-center text-4xl">What is Beveraholic?</h1>
-            <p class="text-center pt-5">
+            <h1 className="text-center text-4xl">What is Beveraholic?</h1>
+            <p className="text-center pt-5">
               Beveraholic is an enjoyable web application that allows users to
               add and find their favorite alcoholic/non-alcoholic beverages.
               Users will be able to pick and make the most popular and tastiest
@@ -60,24 +60,24 @@ export default function about() {
               preparation steps.
             </p>
             <br></br>
-            <h1 class="text-center text-3xl">The Team:</h1>
+            <h1 className="text-center text-3xl">The Team:</h1>
             <br></br>
-            <div class="flex flex-wrap items-center justify-center">
+            <div className="flex flex-wrap items-center justify-center">
               <br />
               {team.map((member) => {
                 return (
-                  <div class="text-center px-8 m-1 p-2 ">
+                  <div className="text-center px-8 m-1 p-2 ">
                     <img
-                      class="h-40 w-auto rounded-none 100%"
+                    className="h-40 w-auto rounded-none 100%"
                       src={member.teamImage}
                       alt=""
                     />
                     <p className="teamname">{`${member.firstName} ${member.lastName}`}</p>
                     <p className="title">{member.teamTitle}</p>
-                    <div class="flex flex-row justify-between">
+                    <div className="flex flex-row justify-between">
                       <a href={member.linkedin}>
                         <img
-                          class="h-8
+                        className="h-8
                       w-8"
                           src="https://www.svgrepo.com/show/144550/linkedin.svg"
                           alt={member.linkedIn}
@@ -85,7 +85,7 @@ export default function about() {
                       </a>
                       <a href={member.gitHub}>
                         <img
-                          class="h-8 w-8"
+                        className="h-8 w-8"
                           src="https://www.svgrepo.com/show/305241/github.svg"
                           alt={member.gitHub}
                         />
@@ -96,7 +96,6 @@ export default function about() {
               })}
             </div>
           </div>
-          ); }
         </div>
       </main>
     </Layout>
