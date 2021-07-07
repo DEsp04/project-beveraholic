@@ -44,9 +44,10 @@ export default function about() {
     <Layout>
       <main className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900">
+          <h1 className="flex justify-center text-3xl font-bold leading-tight text-gray-900">
             About Us
           </h1>
+          <br></br>
         </div>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div>
@@ -68,16 +69,16 @@ export default function about() {
                 return (
                   <div className="text-center px-8 m-1 p-2 ">
                     <img
-                    className="h-40 w-auto rounded-none 100%"
+                      className="h-40 w-auto rounded-none 100%"
                       src={member.teamImage}
                       alt=""
                     />
                     <p className="teamname">{`${member.firstName} ${member.lastName}`}</p>
-                    <p className="title">{member.teamTitle}</p>
+                    <p className="title text-red-800">{member.teamTitle}</p>
                     <div className="flex flex-row justify-between">
                       <a href={member.linkedin}>
                         <img
-                        className="h-8
+                          className="h-8
                       w-8"
                           src="https://www.svgrepo.com/show/144550/linkedin.svg"
                           alt={member.linkedIn}
@@ -85,7 +86,7 @@ export default function about() {
                       </a>
                       <a href={member.gitHub}>
                         <img
-                        className="h-8 w-8"
+                          className="h-8 w-8"
                           src="https://www.svgrepo.com/show/305241/github.svg"
                           alt={member.gitHub}
                         />
