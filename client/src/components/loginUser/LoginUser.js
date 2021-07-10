@@ -4,19 +4,21 @@ import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 
 export default function LoginUser() {
-  const [loginUsername, setLoginUsername] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
   const [data, setData] = useState(null);
 
-  const login = () => {
+  const login = (e) => {
+    e.preventDefault()
+
     axios({
       method: "POST",
       data: {
-        username: loginUsername,
+        email: loginEmail,
         password: loginPassword,
       },
-      withCredentials: true,
+      // withCredentials: true,
       url: "http://localhost:5000/api/login",
     }).then((res) => {
       console.log(res);
@@ -28,7 +30,6 @@ export default function LoginUser() {
     });
   };
 
-  console.log(loginUsername);
 
   // const getUser = () => {
   //   axios({
@@ -65,25 +66,27 @@ export default function LoginUser() {
                 Sign into your account here.
               </h3>
             </div>
+
             <div>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Username
+                Email Address
               </label>
               <div className="mt-1">
                 <input
-                  id="username"
-                  name="username"
-                  type="username"
-                  autoComplete="username"
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  onChange={(e) => setLoginUsername(e.target.value)}
+                  onChange={(e) => setLoginEmail(e.target.value)}
                 />
               </div>
             </div>
+
 
             <div>
               <label
