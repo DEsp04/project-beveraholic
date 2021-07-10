@@ -14,12 +14,8 @@ export default function Registration() {
     e.preventDefault()
 
     axios({
-      // header: {
-      //   'Access-Control-Allow-Origin': '*',
-      // },
       method: "POST",
       data: {
-        "username": registerUsername,
         "email": registerEmail,
         "password": registerPassword,
       },

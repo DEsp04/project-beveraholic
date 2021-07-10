@@ -16,7 +16,7 @@ const registerValidator = () => {
 const loginValidator = () => {
   return [
     check("email").isEmail().withMessage("email is required"),
-    check("password").exists().withMessage("password is required"),
+    check("password").notEmpty().exists().withMessage("password is required"),
   ];
 };
 
