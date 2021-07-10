@@ -52,5 +52,6 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "proxy": "http://localhost:5000"
 }
