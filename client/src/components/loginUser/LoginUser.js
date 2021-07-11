@@ -2,45 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
+import { useDispatch } from "react-redux";
 
 export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const [data, setData] = useState(null);
 
+
+
+  //---- Redux action is trigger here -----
   const login = (e) => {
     e.preventDefault()
 
-    axios({
-      method: "POST",
-      data: {
-        email: loginEmail,
-        password: loginPassword,
-      },
-      // withCredentials: true,
-      url: "http://localhost:5000/api/login",
-    }).then((res) => {
-      console.log(res);
-      const successful = res.data;
 
-      if (successful) {
-        localStorage.setItem("userInfo", JSON.stringify(successful));
-      }
-    });
   };
 
 
-  // const getUser = () => {
-  //   axios({
-  //     method: "GET",
-  //     withCredentials: true,
-  //     url: "http://localhost:5000/api/user",
-  //   }).then((res) => {
-  //     setData(res.data);
-  //     console.log(res.data);
-  //   });
-  // };
 
   const userName = localStorage.getItem("userInfo");
   console.log(userName);
