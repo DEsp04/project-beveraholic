@@ -16,7 +16,7 @@ export default function LoginUser() {
   const login = (e) => {
     e.preventDefault();
     
-    dispatch(fetchUser({loginEmail, loginPassword}))
+    dispatch(fetchUser({ loginEmail, loginPassword }))
   };
 
 

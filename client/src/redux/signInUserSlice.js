@@ -5,9 +5,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchUser = createAsyncThunk(
   "userLogin/fetchUser",
-  async ({email, password}) => {
+  async ({ loginEmail, loginPassword }) => {
     
-    console.log(email, password)
+    console.log(loginEmail, loginPassword);
 
   }
 );
