@@ -5,9 +5,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchUser = createAsyncThunk(
   "userLogin/fetchUser",
-  async () => {
+  async ({email, password}) => {
     
-    
+    console.log(email, password)
 
   }
 );
@@ -15,7 +15,7 @@ export const fetchUser = createAsyncThunk(
 
 
 
-const loginUserSlice = create({
+const loginUserSlice = createSlice({
   name: "userLogin",
   initialState: {
     isAuthenticate: null,
@@ -28,14 +28,14 @@ const loginUserSlice = create({
     [fetchUser.pending]: (state, action) => {
       state.status = "loading";
     },
-    [fetchUser.fulfilled]: (state, action) => {
+    [fetchUser.fulfilled]: (state, {payload}) => {
       state.status = "success";
       state.user = payload;
-      isAuthenticate = "true";
+      state.isAuthenticate = "true";
     },
     [fetchUser.rejected]: (state, action) => {
       state.status = "failed";
-      isAuthenticate = "false";
+      state.isAuthenticate = "false";
     },
 
   },

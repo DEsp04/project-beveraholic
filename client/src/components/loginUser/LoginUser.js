@@ -3,29 +3,30 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
+import { fetchUser } from "../../redux/signInUserSlice"
 
 export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-
-
+  const dispatch = useDispatch();
+  
 
   //---- Redux action is trigger here -----
   const login = (e) => {
-    e.preventDefault()
-
-
+    e.preventDefault();
+    
+    dispatch(fetchUser({loginEmail, loginPassword}))
   };
 
 
 
-  const userName = localStorage.getItem("userInfo");
-  console.log(userName);
+  // const userName = localStorage.getItem("userInfo");
+  // console.log(userName);
 
-  const logOutUser = () => {
-    localStorage.removeItem("userInfo");
-  };
+  // const logOutUser = () => {
+  //   localStorage.removeItem("userInfo");
+  // };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -114,6 +115,7 @@ export default function LoginUser() {
                 </p>
               </div>
             </div>
+
             <div>
               <button
                 type="submit"
@@ -126,10 +128,10 @@ export default function LoginUser() {
           </form>
         </div>
 
-        <div>
+        {/* <div>
           <h1>Username: {userName} </h1>
           <button onClick={logOutUser}>Logout</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
