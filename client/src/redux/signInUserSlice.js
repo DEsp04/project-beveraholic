@@ -34,6 +34,7 @@ const loginUserSlice = createSlice({
       state.status = "success";
       state.user = payload;
       state.isAuthenticate = "true";
+      localStorage.setItem("userToken", payload.token)
     },
     [fetchUser.rejected]: (state, action) => {
       state.status = "failed";

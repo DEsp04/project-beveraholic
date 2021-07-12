@@ -26,8 +26,6 @@ export default function LoginUser() {
   console.log(userStatus)
   //when user is authenticated, save token to the localhost
   if (userStatus.isAuthenticate) {
-    localStorage.setItem("userToken", userStatus.user.token)
-
     return <Redirect to="/home" />;
   }
 
