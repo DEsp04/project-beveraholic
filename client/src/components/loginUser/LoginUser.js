@@ -34,7 +34,7 @@ export default function LoginUser() {
   // console.log(userName);
 
   const logOutUser = () => {
-    localStorage.removeItem("userInfo");
+    localStorage.removeItem("userToken");
   };
 
 
