@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../../redux/signInUserSlice";
@@ -11,7 +11,6 @@ export default function LoginUser() {
   const [loginPassword, setLoginPassword] = useState("");
 
   const userStatus = useSelector((state) => state.user)
-
   const dispatch = useDispatch();
   
 
@@ -22,20 +21,22 @@ export default function LoginUser() {
     dispatch(fetchUser({ loginEmail, loginPassword }))
   };
 
-
   console.log(userStatus)
+  //when user is authenticated, save token to the localhost
+  if (userStatus.isAuthenticate) {
+    localStorage.setItem("userToken", userStatus.user.token)
+
+    return <Redirect to="/home" />;
+  }
 
 
   const userName = localStorage.getItem("userInfo");
-  console.log(userName);
+  // console.log(userName);
 
   const logOutUser = () => {
     localStorage.removeItem("userInfo");
   };
 
-  if (userStatus.isAuthenticate) {
-    localStorage.setItem("userToken", userStatus.user.token)
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
