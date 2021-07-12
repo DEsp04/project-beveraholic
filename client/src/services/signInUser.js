@@ -22,7 +22,7 @@ export async function logInUser( { loginEmail, loginPassword } ) {
       email: loginEmail,
       password: loginPassword
     },
-    url: "http://localhost:5000/api/login",
+    url: "https://beveraholicapp.herokuapp.com/api/login",
   }).then((res) => {
     console.log(res.data)
     return res.data
