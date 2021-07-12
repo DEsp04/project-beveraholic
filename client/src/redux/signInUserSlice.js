@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { logInUser } from "../services/signInUser";
 
 
 
@@ -8,7 +8,9 @@ export const fetchUser = createAsyncThunk(
   async ({ loginEmail, loginPassword }) => {
     
     console.log(loginEmail, loginPassword);
+    const data = logInUser({loginEmail, loginPassword} )
 
+    return data;
   }
 );
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
@@ -21,12 +20,12 @@ export default function LoginUser() {
 
 
 
-  // const userName = localStorage.getItem("userInfo");
-  // console.log(userName);
+  const userName = localStorage.getItem("userInfo");
+  console.log(userName);
 
-  // const logOutUser = () => {
-  //   localStorage.removeItem("userInfo");
-  // };
+  const logOutUser = () => {
+    localStorage.removeItem("userInfo");
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
