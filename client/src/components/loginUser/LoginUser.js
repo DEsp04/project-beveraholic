@@ -1,46 +1,30 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
+import { useDispatch } from "react-redux";
+import { fetchUser } from "../../redux/signInUserSlice";
+import { useSelector } from "react-redux";
+
 
 export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const [data, setData] = useState(null);
+  const userStatus = useSelector((state) => state.user)
 
+  const dispatch = useDispatch();
+  
+
+  //---- Redux action is trigger here -----
   const login = (e) => {
-    e.preventDefault()
-
-    axios({
-      method: "POST",
-      data: {
-        email: loginEmail,
-        password: loginPassword,
-      },
-      // withCredentials: true,
-      url: "http://localhost:5000/api/login",
-    }).then((res) => {
-      console.log(res);
-      const successful = res.data;
-
-      if (successful) {
-        localStorage.setItem("userInfo", JSON.stringify(successful));
-      }
-    });
+    e.preventDefault();
+    
+    dispatch(fetchUser({ loginEmail, loginPassword }))
   };
 
 
-  // const getUser = () => {
-  //   axios({
-  //     method: "GET",
-  //     withCredentials: true,
-  //     url: "http://localhost:5000/api/user",
-  //   }).then((res) => {
-  //     setData(res.data);
-  //     console.log(res.data);
-  //   });
-  // };
+  console.log(userStatus)
+
 
   const userName = localStorage.getItem("userInfo");
   console.log(userName);
@@ -136,6 +120,7 @@ export default function LoginUser() {
                 </p>
               </div>
             </div>
+
             <div>
               <button
                 type="submit"
@@ -148,10 +133,10 @@ export default function LoginUser() {
           </form>
         </div>
 
-        <div>
+        {/* <div>
           <h1>Username: {userName} </h1>
           <button onClick={logOutUser}>Logout</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
