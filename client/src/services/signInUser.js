@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 
-export async function logInUser() {
+export async function logInUser( { loginEmail, loginPassword } ) {
   
   const config = {
     headers: {
@@ -13,13 +13,20 @@ export async function logInUser() {
     },
   };
 
-  const body;
-  
-  
-  
-  
-  
-  
-  
-  return
+  // const body = JSON.stringify({ loginEmail, loginPassword });
+
+  const results = axios({
+    config,
+    method: "POST",
+    data: {
+      email: loginEmail,
+      password: loginPassword
+    },
+    url: "http://localhost:5000/api/login",
+  }).then((res) => {
+    console.log(res.data)
+    return res.data
+  })
+
+  return results;
 }

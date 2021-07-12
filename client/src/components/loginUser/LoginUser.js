@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
-import { fetchUser } from "../../redux/signInUserSlice"
+import { fetchUser } from "../../redux/signInUserSlice";
+import { useSelector } from "react-redux";
+
 
 export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+
+  const userStatus = useSelector((state) => state.user)
 
   const dispatch = useDispatch();
   
@@ -18,6 +22,8 @@ export default function LoginUser() {
     dispatch(fetchUser({ loginEmail, loginPassword }))
   };
 
+
+  console.log(userStatus)
 
 
   const userName = localStorage.getItem("userInfo");
