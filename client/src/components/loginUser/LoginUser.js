@@ -17,8 +17,10 @@ export default function LoginUser() {
   //---- Redux action is trigger here -----
   const login = (e) => {
     e.preventDefault();
-    
-    dispatch(fetchUser({ loginEmail, loginPassword }))
+
+    if (loginEmail.length > 0 && loginPassword.length > 0) {
+      dispatch(fetchUser({ loginEmail, loginPassword }))
+    }
   };
 
   console.log(userStatus)
