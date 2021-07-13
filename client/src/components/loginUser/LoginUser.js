@@ -4,8 +4,7 @@ import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../../redux/signInUserSlice";
 import { useSelector } from "react-redux";
-import axios from "axios";
-
+import loadUser from "../../utilities/loadUser";
 
 export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
@@ -27,8 +26,11 @@ export default function LoginUser() {
   console.log(userStatus)
   //when user is authenticated, save token to the localhost
   if (userStatus.isAuthenticate === "true") {
-    const userName = localStorage.getItem("userToken");
-    console.log(userName);
+    // const userToken = localStorage.getItem("userToken");
+    // console.log(userToken);
+    // setAuthToken(userToken);
+    dispatch(loadUser())
+
 
     return <Redirect to="/home" />;
   }
