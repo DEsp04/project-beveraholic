@@ -4,7 +4,7 @@ import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../../redux/signInUserSlice";
 import { useSelector } from "react-redux";
-import loadUser from "../../utilities/loadUser";
+
 
 export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
@@ -29,8 +29,9 @@ export default function LoginUser() {
     // const userToken = localStorage.getItem("userToken");
     // console.log(userToken);
     // setAuthToken(userToken);
-    dispatch(loadUser())
-
+   
+    //must create a loadUserSlice
+    // dispatch(loadUser())
 
     return <Redirect to="/home" />;
   }
