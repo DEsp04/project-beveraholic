@@ -9,7 +9,7 @@ export const fetchLoadUser = createAsyncThunk(
   async () => {
     
     
-    const data = logInUser( )
+    const data = loadedUser( )
 
     return data;
   }
