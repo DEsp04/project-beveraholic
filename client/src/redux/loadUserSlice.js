@@ -28,15 +28,15 @@ const loadUserSlice = createSlice({
 
 
   extraReducers: {
-    [fetchUser.pending]: (state, action) => {
+    [fetchLoadUser.pending]: (state, action) => {
       state.status = "loading";
     },
-    [fetchUser.fulfilled]: (state, {payload}) => {
+    [fetchLoadUser.fulfilled]: (state, {payload}) => {
       state.status = "success";
       state.user = payload;
       state.isAuthenticate = "true";
     },
-    [fetchUser.rejected]: (state, action) => {
+    [fetchLoadUser.rejected]: (state, action) => {
       state.status = "failed";
       state.isAuthenticate = "false";
     },

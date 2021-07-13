@@ -7,7 +7,7 @@ export async function loadedUser() {
     return data
   });
 
-  console.log(data)
+  console.log(results)
 
   return results;
 }
