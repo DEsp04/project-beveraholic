@@ -8,7 +8,9 @@ export const fetchUser = createAsyncThunk(
   async ({ loginEmail, loginPassword }) => {
     
     console.log(loginEmail, loginPassword);
-    const data = logInUser({loginEmail, loginPassword} )
+    const data = logInUser({ loginEmail, loginPassword })
+    
+    console.log(data)
 
     return data;
   }
@@ -34,6 +36,7 @@ const loginUserSlice = createSlice({
       state.status = "success";
       state.user = payload;
       state.isAuthenticate = "true";
+      localStorage.setItem("userToken", payload.token)
     },
     [fetchUser.rejected]: (state, action) => {
       state.status = "failed";

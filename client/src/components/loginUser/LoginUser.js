@@ -3,6 +3,7 @@ import { NavLink, Redirect } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../../redux/signInUserSlice";
+import { fetchLoadUser } from "../../redux/loadUserSlice";
 import { useSelector } from "react-redux";
 
 
@@ -10,7 +11,8 @@ export default function LoginUser() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const userStatus = useSelector((state) => state.user)
+  
+  const userStatus = useSelector((state) => state.user);
   const dispatch = useDispatch();
   
 
@@ -24,16 +26,22 @@ export default function LoginUser() {
   };
 
   console.log(userStatus)
+  
   //when user is authenticated, save token to the localhost
-  if (userStatus.isAuthenticate) {
-    localStorage.setItem("userToken", userStatus.user.token)
+  if (userStatus.isAuthenticate === "true") {
+    const userToken = localStorage.getItem("userToken");
+    // console.log(userToken);
+    // setAuthToken(userToken);
+   
+    //must create a loadUserSlice
+    dispatch(fetchLoadUser(userToken))
 
+    
     return <Redirect to="/home" />;
   }
 
 
-  const userName = localStorage.getItem("userInfo");
-  // console.log(userName);
+  
 
   const logOutUser = () => {
     localStorage.removeItem("userToken");
