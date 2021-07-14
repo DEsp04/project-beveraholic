@@ -9,9 +9,9 @@ export default function Home() {
   const reduxState = useSelector((state) => state)
   const dispatch = useDispatch();
  
-  const userName = useSelector((state) => state.loadedUser.loadedUser)
+  const userStatus = useSelector((state) => state.loadedUser)
   console.log(reduxState)
-  console.log(userName)
+  console.log(userStatus)
 
   const userToken = localStorage.getItem("userToken");
 
@@ -19,15 +19,20 @@ export default function Home() {
     dispatch(fetchLoadUser(userToken))
   }, [])
  
+  const userName = () => {
+    if (userStatus.isAuthenticate === "true") {
 
+      return <h1 className="text-3xl font-bold leading-tight text-gray-900">
+        Welcome, {userStatus.loadedUser.username.toUpperCase()}
+      </h1>
+    }
+  }
 
   return (
     <Layout>
       <main className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900">
-            Home
-          </h1>
+          { userName() }
         </div>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <SearchInput />
