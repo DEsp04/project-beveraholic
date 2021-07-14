@@ -1,22 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../../components/layout/Layout";
 import SearchInput from "../../components/searchinput/SearchInput";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { fetchLoadUser } from "../../redux/loadUserSlice";
 
 export default function Home() {
 
   const reduxState = useSelector((state) => state)
-
+  const dispatch = useDispatch();
+ 
+  const userName = useSelector((state) => state.loadedUser.loadedUser)
   console.log(reduxState)
+  console.log(userName)
+
+  const userToken = localStorage.getItem("userToken");
+
+  useEffect(() => {
+    dispatch(fetchLoadUser(userToken))
+  }, [])
+ 
+
 
   return (
     <Layout>
       <main className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* <h1 className="text-3xl font-bold leading-tight text-gray-900">
+          <h1 className="text-3xl font-bold leading-tight text-gray-900">
             Home
-          </h1> */}
+          </h1>
         </div>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <SearchInput />

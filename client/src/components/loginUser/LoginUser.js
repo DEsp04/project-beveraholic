@@ -29,12 +29,12 @@ export default function LoginUser() {
   
   //when user is authenticated, save token to the localhost
   if (userStatus.isAuthenticate === "true") {
-    const userToken = localStorage.getItem("userToken");
+    // const userToken = localStorage.getItem("userToken");
     // console.log(userToken);
     // setAuthToken(userToken);
    
     //must create a loadUserSlice
-    dispatch(fetchLoadUser(userToken))
+    // dispatch(fetchLoadUser(userToken))
 
     
     return <Redirect to="/home" />;
