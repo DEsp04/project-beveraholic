@@ -1,10 +1,14 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
 import SearchInput from "../../components/searchinput/SearchInput";
+import { useSelector } from "react-redux";
+
 
 export default function Home() {
 
+  const reduxState = useSelector((state) => state)
 
+  console.log(reduxState)
 
   return (
     <Layout>

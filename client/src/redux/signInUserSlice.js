@@ -8,7 +8,9 @@ export const fetchUser = createAsyncThunk(
   async ({ loginEmail, loginPassword }) => {
     
     console.log(loginEmail, loginPassword);
-    const data = logInUser({loginEmail, loginPassword} )
+    const data = logInUser({ loginEmail, loginPassword })
+    
+    console.log(data)
 
     return data;
   }

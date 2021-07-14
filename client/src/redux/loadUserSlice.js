@@ -1,15 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { loadedUser } from "../services/loadUser";
+import setAuthToken from "../utilities/setAuthToken";
 
 
 
 
 export const fetchLoadUser = createAsyncThunk(
   "loadUser/fetchLoadUser",
-  async () => {
+  async (token) => {
     
+    if (token) {
+      setAuthToken(token);
+    }
     
-    const data = loadedUser( )
+    const data = loadedUser()
+    console.log("loadUser Slice:" + data )
 
     return data;
   }
@@ -23,7 +28,7 @@ const loadUserSlice = createSlice({
   initialState: {
     isAuthenticate: null,
     status: null,
-    user: null,
+    loadedUser: null,
   },
 
 
@@ -33,7 +38,7 @@ const loadUserSlice = createSlice({
     },
     [fetchLoadUser.fulfilled]: (state, {payload}) => {
       state.status = "success";
-      state.user = payload;
+      state.loadedUser = payload;
       state.isAuthenticate = "true";
     },
     [fetchLoadUser.rejected]: (state, action) => {
