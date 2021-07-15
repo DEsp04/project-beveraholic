@@ -7,19 +7,20 @@ import Favorites from "./screens/favorites/Favorites";
 import About from "./screens/about/about";
 import User from "./screens/user/User";
 import { useEffect, useState } from "react";
+import PrivateRoute from "./routing/PrivateRoute";
 
 function App() {
 
-  const history = useHistory();
+  // const history = useHistory();
 
-  const ayman = localStorage.getItem("userInfo");
-  console.log("this is from app.js:", ayman);
+  // const ayman = localStorage.getItem("userInfo");
+  // console.log("this is from app.js:", ayman);
 
-  useEffect(() => {
-    if (ayman) {
-      history.push("/home");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (ayman) {
+  //     history.push("/home");
+  //   }
+  // }, []);
 
 
   return (
@@ -32,9 +33,12 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/home">
+
+          <PrivateRoute exact path="/home" component={Home} /> 
+          {/* <Route exact path="/home">
             <Home />
-          </Route>
+          </Route> */}
+            
           <Route exact path="/favorites">
             <Favorites />
           </Route>
