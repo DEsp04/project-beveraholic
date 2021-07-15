@@ -9,6 +9,7 @@ export default function Registration() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
  
+  localStorage.removeItem("userToken");
 
   const register = (e) => {
     e.preventDefault()
