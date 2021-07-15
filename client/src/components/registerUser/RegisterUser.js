@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchRegisterUser } from "../../redux/registerUserSlice";
+
+
+
 
 export default function Registration() {
   //hooks to capture user inputs
@@ -17,7 +21,7 @@ export default function Registration() {
     e.preventDefault()
 
    
-    // dispatch();
+    dispatch(fetchRegisterUser( {registerUsername, registerEmail, registerPassword} ));
   };
 
   return (
