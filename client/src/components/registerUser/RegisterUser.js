@@ -16,6 +16,7 @@ export default function Registration() {
     axios({
       method: "POST",
       data: {
+        "username": registerUsername,
         "email": registerEmail,
         "password": registerPassword,
       },
