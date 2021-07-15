@@ -9,11 +9,11 @@ export const fetchRegisterUser = createAsyncThunk(
     
     console.log(registerUsername, registerEmail, registerPassword);
     
-    // const data = userRegister({ userName, loginEmail, loginPassword })
+    const data = userRegister({ registerUsername, registerEmail, registerPassword })
     
-    // console.log(data)
+    console.log(data)
 
-    // return data;
+    return data;
   }
 );
 
