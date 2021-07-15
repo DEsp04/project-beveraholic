@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../../redux/signInUserSlice";
-import { useSelector } from "react-redux";
+
 
 
 export default function LoginUser() {
