@@ -1,9 +1,9 @@
 import { Route, Redirect } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 
-
+//this will allow users not route to other pages without authentication
 const PrivateRoute = ({
   component: Component,
   ...rest

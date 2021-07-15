@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRegisterUser } from "../../redux/registerUserSlice";
+
+
+
 
 export default function Registration() {
   //hooks to capture user inputs
@@ -9,19 +13,15 @@ export default function Registration() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
  
+  const dispatch = useDispatch();
+
+  localStorage.removeItem("userToken");
 
   const register = (e) => {
     e.preventDefault()
 
-    axios({
-      method: "POST",
-      data: {
-        "email": registerEmail,
-        "password": registerPassword,
-      },
-      // withCredentials: true,
-      url: "http://localhost:5000/api/register",
-    }).then((res) => console.log(res));
+   
+    dispatch(fetchRegisterUser( {registerUsername, registerEmail, registerPassword} ));
   };
 
   return (
