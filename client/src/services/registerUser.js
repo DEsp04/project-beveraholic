@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 
-export async function registerUser() {
+export async function userRegister() {
   
 
 
@@ -12,7 +12,7 @@ export async function registerUser() {
 
 
 
-  
+
 }
 
 
