@@ -14,7 +14,7 @@ export async function userRegister({ registerUsername, registerEmail, registerPa
       "password": registerPassword,
     },
     // withCredentials: true,
-    url: "http://localhost:5000/api/register",
+    url: "https://beveraholicapp.herokuapp.com/api/register",
   }).then((res) => {
     console.log(res)
     return res.data

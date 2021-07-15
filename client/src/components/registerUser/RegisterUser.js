@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRegisterUser } from "../../redux/registerUserSlice";
@@ -13,16 +13,25 @@ export default function Registration() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
  
+  const registerStatus = useSelector((state) => state.registeredUser.status);
   const dispatch = useDispatch();
 
+  
   localStorage.removeItem("userToken");
+
 
   const register = (e) => {
     e.preventDefault()
 
-   
     dispatch(fetchRegisterUser( {registerUsername, registerEmail, registerPassword} ));
   };
+
+  console.log(registerStatus)
+
+  if (registerStatus === "success") {
+    return <Redirect to="/login" />
+  }
+
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
