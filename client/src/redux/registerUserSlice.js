@@ -22,21 +22,20 @@ export const fetchRegisterUser = createAsyncThunk(
 const registerUserSlice = createSlice({
   name: "userRegister",
   initialState: {
-    isAuthenticate: null,
     status: null,
     user: null,
   },
 
 
   extraReducers: {
-    [fetchUser.pending]: (state, action) => {
+    [fetchRegisterUser.pending]: (state, action) => {
       state.status = "loading";
     },
-    [fetchUser.fulfilled]: (state, {payload}) => {
+    [fetchRegisterUser.fulfilled]: (state, {payload}) => {
       state.status = "success";
       state.user = payload;
     },
-    [fetchUser.rejected]: (state, action) => {
+    [fetchRegisterUser.rejected]: (state, action) => {
       state.status = "failed";
     },
 
