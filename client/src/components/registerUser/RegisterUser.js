@@ -14,16 +14,7 @@ export default function Registration() {
   const register = (e) => {
     e.preventDefault()
 
-    axios({
-      method: "POST",
-      data: {
-        "username": registerUsername,
-        "email": registerEmail,
-        "password": registerPassword,
-      },
-      // withCredentials: true,
-      url: "http://localhost:5000/api/register",
-    }).then((res) => console.log(res));
+   
   };
 
   return (
