@@ -9,16 +9,17 @@ const PrivateRoute = ({
   ...rest
 }) => {
 
-  
-  
   const reduxState = useSelector((state) => state)
   const isAuthenticate = reduxState.user.isAuthenticate;
-  console.log(isAuthenticate)
+  const status = reduxState.loadedUser.status;
+
+  console.log(status)
+
 
   return <Route
     {...rest}
     render={(props) =>
-     isAuthenticate === "true" ? (
+     isAuthenticate === "true" || status === "success" ? (
         <Component {...props} />
       ) : (
         <Redirect to="/login" />
