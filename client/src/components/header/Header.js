@@ -13,7 +13,7 @@ const user = {
 };
 
 const navigation = [
-  { name: "Home", to: "/home", current: true },
+  { name: "Home", to: "/home", current: false },
   { name: "Favorite Recipes", to: "/favorites", current: false },
   { name: " About", to: "/about-us", current: false },
 ];
@@ -30,8 +30,8 @@ const logOut = () => {
 
 export default function Header() {
   return (
-    <div className="min-h-full bg-white">
-      <Disclosure as="nav" className="bg-white border-b border-gray-200">
+    <div className="min-h-full bg-albescent-white-500">
+      <Disclosure as="nav" className="bg-white border-b border-albescent-white-500">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export default function Header() {
                         className={dropDown(
                           item.current
                             ? "border-indigo-500 text-gray-900"
-                            : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                            : "border-transparent text-black-500 hover:border-vin-rouge-500 hover:text-vin-rouge-500",
                           "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
@@ -94,7 +94,7 @@ export default function Header() {
                         >
                           <Menu.Items
                             static
-                            className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white-500 ring-1 ring-black ring-opacity-5 focus:outline-none"
                           >
                             {userNavigation.map((item) => (
                               <Menu.Item key={item.name}>
