@@ -45,7 +45,7 @@ export default function SearchInput() {
 
           
           
-          <Menu as="div" className="relative inline-block text-left">
+          {/* <Menu as="div" className="relative inline-block text-left">
             {({ open }) => (
               <>
                 <div>
@@ -95,12 +95,12 @@ export default function SearchInput() {
                 </Transition>
               </>
             )}
-          </Menu>
+          </Menu> */}
         </div>
         <>
           <button
             type="button"
-            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="bg-transparent border border-gray-300 rounded-sm font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500"
             onClick={openForm}
           >
             Add Beverage

@@ -12,6 +12,13 @@ module.exports = {
       blue: colors.sky,
       red: colors.rose,
       pink: colors.fuchsia,
+      'vin-rouge': { 
+        '500': '#993a56',
+      },
+      'white': {
+        '500': '#ffffff', 
+    }
+     
     },
     spacing: {
       px: "1px",
