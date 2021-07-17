@@ -20,7 +20,10 @@ module.exports = {
       },
       'albescent-white': {
         '500': '#f7e7ce', 
-      }
+      },
+      'soapstone': {
+        '500': '#fffbf8',
+    }
      
     },
     spacing: {
