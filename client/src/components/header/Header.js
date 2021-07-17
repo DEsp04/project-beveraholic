@@ -30,8 +30,8 @@ const logOut = () => {
 
 export default function Header() {
   return (
-    <div className="min-h-full bg-white">
-      <Disclosure as="nav" className="bg-white border-b border-gray-200">
+    <div className="min-h-full bg-albescent-white-500">
+      <Disclosure as="nav" className="bg-white border-b border-albescent-white-500">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

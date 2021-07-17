@@ -17,7 +17,10 @@ module.exports = {
       },
       'white': {
         '500': '#ffffff', 
-    }
+      },
+      'albescent-white': {
+        '500': '#f7e7ce', 
+      }
      
     },
     spacing: {

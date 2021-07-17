@@ -100,7 +100,7 @@ export default function SearchInput() {
         <>
           <button
             type="button"
-            className="bg-transparent border border-gray-300 rounded-sm font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500"
+            className="bg-transparent border border-gray-300 rounded-sm font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
             onClick={openForm}
           >
             Add Beverage
