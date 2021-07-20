@@ -126,10 +126,10 @@ export default function LoginUser() {
               </div>
             </div>
 
-            <div>
+            <div className="flex justify-center">
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-spring-wood-500 bg-vin-rouge-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold font-medium text-spring-wood-500 bg-vin-rouge-500 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500 hover:bg-vin-rouge-700"
                 onClick={login}
               >
                 Log in
