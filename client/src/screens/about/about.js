@@ -4,6 +4,9 @@ import shan from "../../images/team/shan.png";
 import angel from "../../images/team/angel.png";
 import david from "../../images/team/david.png";
 import katherine from "../../images/team/katherine.png";
+import linkedin from "../../images/logos/linkedin-logo.svg";
+import github from "../../images/logos/github-logo.svg";
+
 
 export default function about() {
   const team = [
@@ -57,31 +60,31 @@ export default function about() {
             <br></br>
             <h1 className="text-center text-xxxl font-semibold">The Team:</h1>
             <br></br>
-            <div className="flex flex-wrap items-center justify-center">
+            <div className="flex flex-wrap items-center justify-around mb-16">
               <br />
               {team.map((member) => {
                 return (
-                  <div className="text-center px-8 m-1 p-2 ">
+                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 ">
                     <img
                       className="h-40 w-auto rounded-none 100%"
                       src={member.teamImage}
                       alt=""
                     />
-                    <p className="teamname">{`${member.firstName} ${member.lastName}`}</p>
-                    <p className="title text-red-800">{member.teamTitle}</p>
-                    <div className="flex flex-row justify-between">
+                    <p className="teamname mt-2 font-bold text-spring-wood-500">{`${member.firstName} ${member.lastName}`}</p>
+                    <p className="title text-spring-wood-500">{member.teamTitle}</p>
+                    <div className="mt-4 mb-4 flex flex-row justify-around">
                       <a href={member.linkedin}>
                         <img
-                          className="h-8
-                      w-8"
-                          src="https://www.svgrepo.com/show/144550/linkedin.svg"
+                          className="h-12
+                      w-12"
+                          src={linkedin}
                           alt={member.linkedIn}
                         />
                       </a>
                       <a href={member.gitHub}>
                         <img
-                          className="h-8 w-8"
-                          src="https://www.svgrepo.com/show/305241/github.svg"
+                          className="h-12 w-12"
+                          src={github}
                           alt={member.gitHub}
                         />
                       </a>
