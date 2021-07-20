@@ -26,7 +26,7 @@ module.exports = {
         '500': '#fffbf8',
       },
       'shark': {
-        '500': '#24272c',
+        '500': '#515155',
       },
       'spring-wood': {
         '500': '#faf6ef',
