@@ -39,7 +39,7 @@ export default function LoginUser() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-soapstone-500 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <img className="mx-auto h-24 w-auto" src={logo} alt="Beveraholic" />
       </div>
@@ -114,11 +114,11 @@ export default function LoginUser() {
               </div>
 
               <div className="text-sm">
-                <p className="mt-2 text-center text-sm text-spring-wood-500">
+                <p className="text-center text-sm text-spring-wood-500">
                   Don't have an account?{" "}
                   <NavLink
                     to={"/"}
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                    className="font-medium text-indigo-600 hover:text-gray-400"
                   >
                     Sign Up
                   </NavLink>
