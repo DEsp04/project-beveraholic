@@ -23,6 +23,12 @@ module.exports = {
       },
       'soapstone': {
         '500': '#fffbf8',
+      },
+      'shark': {
+        '500': '#24272c',
+      },
+      'spring-wood': {
+        '500': '#faf6ef',
     }
      
     },
@@ -146,6 +152,10 @@ module.exports = {
       base: "1rem",
       lg: "1.125rem",
       xl: "1.25rem",
+      xxl: "1.5rem",
+      xxxl: "1.875rem",
+      iv: "2.25rem",
+      v:"3rem",
       ...theme("spacing"),
     }),
     fontWeight: {
