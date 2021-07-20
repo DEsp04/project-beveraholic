@@ -34,7 +34,7 @@ export default function Registration() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-soapstone-500 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <img className="mx-auto h-24 w-auto" src={logo} alt="Beveraholic" />
       </div>
@@ -132,7 +132,7 @@ export default function Registration() {
                   Already have an account?{" "}
                   <NavLink
                     to={"/login"}
-                    className="font-medium text-indigo-600 hover:text-vin-rouge-500"
+                    className="font-medium text-indigo-600 hover:text-vin-rouge-500 font-bold"
                   >
                     Log In
                   </NavLink>
