@@ -43,15 +43,9 @@ export default function about() {
   return (
     <Layout>
       <main className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="flex justify-center text-3xl font-bold leading-tight text-gray-900">
-            About Us
-          </h1>
-          <br></br>
-        </div>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div>
-            <h1 className="text-center text-4xl">What is Beveraholic?</h1>
+            <h2 className="text-center text-iv font-semibold">What is Beveraholic?</h2>
             <p className="text-center pt-5">
               Beveraholic is an enjoyable web application that allows users to
               add and find their favorite alcoholic/non-alcoholic beverages.
@@ -61,7 +55,7 @@ export default function about() {
               preparation steps.
             </p>
             <br></br>
-            <h1 className="text-center text-3xl">The Team:</h1>
+            <h1 className="text-center text-xxxl font-semibold">The Team:</h1>
             <br></br>
             <div className="flex flex-wrap items-center justify-center">
               <br />

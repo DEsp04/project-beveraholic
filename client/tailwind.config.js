@@ -14,6 +14,7 @@ module.exports = {
       pink: colors.fuchsia,
       'vin-rouge': { 
         '500': '#993a56',
+        '700': '#732c41',
       },
       'white': {
         '500': '#ffffff', 
@@ -23,6 +24,12 @@ module.exports = {
       },
       'soapstone': {
         '500': '#fffbf8',
+      },
+      'shark': {
+        '500': '#515155',
+      },
+      'spring-wood': {
+        '500': '#faf6ef',
     }
      
     },
@@ -74,6 +81,7 @@ module.exports = {
     borderRadius: {
       none: "0",
       sm: "0.125rem",
+      md: "0.375rem",
       default: "0.25rem",
       lg: "0.5rem",
       full: "9999px",
@@ -146,6 +154,10 @@ module.exports = {
       base: "1rem",
       lg: "1.125rem",
       xl: "1.25rem",
+      xxl: "1.5rem",
+      xxxl: "1.875rem",
+      iv: "2.25rem",
+      v:"3rem",
       ...theme("spacing"),
     }),
     fontWeight: {

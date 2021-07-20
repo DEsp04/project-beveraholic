@@ -7,9 +7,7 @@ export default function Layout(props) {
   return (
     <div class="bg-soapstone-500">
       <Header />
-      <FullHeight>
         {props.children}
-      </FullHeight>
       <Footer />
     </div>
   );

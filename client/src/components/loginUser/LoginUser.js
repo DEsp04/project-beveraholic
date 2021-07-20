@@ -39,19 +39,19 @@ export default function LoginUser() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-soapstone-500 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <img className="mx-auto h-24 w-auto" src={logo} alt="Beveraholic" />
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-shark-500 py-8 px-4 sm:rounded-lg sm:px-10">
           <form className="space-y-6" action="#" method="POST">
             <div>
-              <h2 className="mt-6 text-center text-4xl font-extrabold text-gray-900">
+              <h2 className="mt-6 text-center text-iv font-extrabold text-spring-wood-500">
                 Hello!
               </h2>
-              <h3 className="mt-2 text-center text-l text-gray-600">
+              <h3 className="mt-2 text-center text-l text-spring-wood-500">
                 Sign into your account here.
               </h3>
             </div>
@@ -59,7 +59,7 @@ export default function LoginUser() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-spring-wood-500"
               >
                 Email Address
               </label>
@@ -80,7 +80,7 @@ export default function LoginUser() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-spring-wood-500"
               >
                 Password
               </label>
@@ -107,18 +107,18 @@ export default function LoginUser() {
                 />
                 <label
                   htmlFor="remember_me"
-                  className="ml-2 block text-sm text-gray-900"
+                  className="ml-2 block text-sm text-spring-wood-500"
                 >
                   Remember me
                 </label>
               </div>
 
               <div className="text-sm">
-                <p className="mt-2 text-center text-sm text-gray-600">
+                <p className="text-center text-sm text-spring-wood-500">
                   Don't have an account?{" "}
                   <NavLink
                     to={"/"}
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                    className="font-medium text-spring-wood-500 hover:text-vin-rouge-500 font-bold"
                   >
                     Sign Up
                   </NavLink>
@@ -126,10 +126,11 @@ export default function LoginUser() {
               </div>
             </div>
 
-            <div>
+            <div className="flex justify-center">
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold font-medium text-spring-wood-500 bg-vin-rouge-500
+                hover:bg-vin-rouge-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500 "
                 onClick={login}
               >
                 Log in
