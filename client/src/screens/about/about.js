@@ -68,7 +68,7 @@ export default function about() {
                 return (
                   <div className="text-center px-8 m-1 p-2 ">
                     <img
-                    className="h-40 w-auto rounded-none 100%"
+                      className="h-40 w-auto rounded-none 100%"
                       src={member.teamImage}
                       alt=""
                     />
@@ -77,7 +77,7 @@ export default function about() {
                     <div className="flex flex-row justify-between">
                       <a href={member.linkedin}>
                         <img
-                        className="h-8
+                          className="h-8
                       w-8"
                           src="https://www.svgrepo.com/show/144550/linkedin.svg"
                           alt={member.linkedIn}
@@ -85,7 +85,7 @@ export default function about() {
                       </a>
                       <a href={member.gitHub}>
                         <img
-                        className="h-8 w-8"
+                          className="h-8 w-8"
                           src="https://www.svgrepo.com/show/305241/github.svg"
                           alt={member.gitHub}
                         />
