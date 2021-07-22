@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./signInUserSlice";
 import loadUserReducer from "./loadUserSlice";
 import registerUserReducer from "./registerUserSlice";
+import getBeveragesReducer from "./beveragesSlice";
 
 
 
@@ -10,5 +11,6 @@ export default configureStore({
     user: userReducer,
     loadedUser: loadUserReducer,
     registeredUser: registerUserReducer,
+    getBeverages: getBeveragesReducer,
   },
 });
