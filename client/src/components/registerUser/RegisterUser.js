@@ -10,15 +10,20 @@ export default function Registration() {
   const [registerPassword, setRegisterPassword] = useState("");
  
 
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault()
+
     axios({
+      header: {
+        'Access-Control-Allow-Origin': '*',
+      },
       method: "POST",
       data: {
-        username: registerUsername,
-        email: registerEmail,
-        password: registerPassword,
+        "username": registerUsername,
+        "email": registerEmail,
+        "password": registerPassword,
       },
-      withCredentials: true,
+      // withCredentials: true,
       url: "http://localhost:5000/api/register",
     }).then((res) => console.log(res));
   };
