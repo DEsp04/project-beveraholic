@@ -3,6 +3,9 @@ import Layout from "../../components/layout/Layout";
 import SearchInput from "../../components/searchinput/SearchInput";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchLoadUser } from "../../redux/loadUserSlice";
+
+import { fetchDrinks } from "../../redux/beveragesSlice";
+
 import FullHeight from "react-full-height";
 import Beverages from "../../components/beverages/Beverages"
 
@@ -18,7 +21,8 @@ export default function Home() {
   const userToken = localStorage.getItem("userToken");
 
   useEffect(() => {
-    dispatch(fetchLoadUser(userToken))
+    dispatch(fetchLoadUser(userToken));
+    dispatch(fetchDrinks());
   }, [])
  
   const userName = () => {
