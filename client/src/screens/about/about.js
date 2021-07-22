@@ -6,6 +6,7 @@ import david from "../../images/team/david.png";
 import katherine from "../../images/team/katherine.png";
 import linkedin from "../../images/logos/linkedin-logo.svg";
 import github from "../../images/logos/github-logo.svg";
+import FullHeight from "react-full-height";
 
 
 export default function about() {
@@ -44,7 +45,9 @@ export default function about() {
     },
   ];
   return (
+   
     <Layout>
+      
       <main className="py-10">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div>
@@ -95,7 +98,8 @@ export default function about() {
             </div>
           </div>
         </div>
-      </main>
+        </main>
+       
     </Layout>
   );
 }
