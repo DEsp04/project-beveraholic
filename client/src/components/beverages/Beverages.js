@@ -10,6 +10,10 @@ import { getBeverages } from "../../services/fetchBeverages"
 
 
 export default function Beverages() {
+
+
+
+  
   return (
     <div>
       <h2>Beverages</h2>
