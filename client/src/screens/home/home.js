@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "../../components/layout/Layout";
-import SearchInput from "../../components/searchinput/SearchInput";
+import SearchInput from "../../components/searchinput/SearchInput.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchLoadUser } from "../../redux/loadUserSlice";
 

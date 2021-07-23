@@ -6,7 +6,7 @@ export default function Signup() {
   return (
     <div>
       <Registration />
-      <Footer />
+     
     </div>
   );
 }

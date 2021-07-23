@@ -7,6 +7,8 @@ import Favorites from "./screens/favorites/Favorites";
 import About from "./screens/about/about";
 import User from "./screens/user/User";
 import PrivateRoute from "./routing/PrivateRoute";
+import Footer from "./components/footer/Footer";
+
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
           </Route> */}
         </Switch>
       </main>
+      <Footer />
     </div>
   );
 }

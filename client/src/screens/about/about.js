@@ -47,9 +47,9 @@ export default function about() {
   return (
    
     <Layout>
-      
-      <main className="py-10">
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+       
+      {/* <main className="py-10"> */}
+        <div className="py-32 max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div>
             <h2 className="text-center text-iv font-semibold">What is Beveraholic?</h2>
             <p className="text-center pt-5">
@@ -63,11 +63,11 @@ export default function about() {
             <br></br>
             <h1 className="text-center text-xxxl font-semibold">The Team:</h1>
             <br></br>
-            <div className="flex flex-wrap items-center justify-around mb-16">
+            <div className="flex justify-center items-center flex-wrap mb-16">
               <br />
               {team.map((member) => {
                 return (
-                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 ">
+                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 md:mx-10 mx-0">
                     <img
                       className="h-40 w-auto rounded-none 100%"
                       src={member.teamImage}
@@ -98,8 +98,8 @@ export default function about() {
             </div>
           </div>
         </div>
-        </main>
-       
+        {/* </main> */}
+        
     </Layout>
   );
 }
