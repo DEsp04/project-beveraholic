@@ -6,7 +6,6 @@ export default function Login() {
   return (
     <div>
       <LoginUser />
-      <Footer />
     </div>
   );
 }

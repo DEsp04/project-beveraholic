@@ -7,8 +7,8 @@ export default function Layout(props) {
   return (
     <div class="bg-soapstone-500">
       <Header />
-git         {props.children}
-      <Footer />
+        {props.children}
+      {/* <Footer /> */}
     </div>
   );
 }
