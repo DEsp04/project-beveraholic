@@ -45,14 +45,6 @@ export default function SearchInput() {
           />
         </div>
         <>
-          <button
-            type="button"
-            className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
-            onClick={openForm}
-          >
-            Add Beverage
-          </button>
-
           <NewRecipe />
         </>
       </div>
