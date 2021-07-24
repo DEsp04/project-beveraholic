@@ -7,7 +7,9 @@ import { fetchLoadUser } from "../../redux/loadUserSlice";
 import { fetchDrinks } from "../../redux/beveragesSlice";
 
 import FullHeight from "react-full-height";
-import Beverages from "../../components/beverages/Beverages"
+import Beverages from "../../components/beverages/Beverages";
+
+
 
 export default function Home() {
 
@@ -47,6 +49,7 @@ export default function Home() {
             {/* <div className="px-4 py-8 sm:px-0">
               <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
             </div> */}
+
           </div>
         </main>
       </FullHeight>
