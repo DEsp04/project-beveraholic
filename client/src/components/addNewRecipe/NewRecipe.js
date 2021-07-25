@@ -58,6 +58,25 @@ export default function Modal() {
                     </div>  
                   </div>
                     
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                    <label
+                      htmlFor="category"
+                      className="block text-sm font-medium text-spring-wood-500"
+                    >
+                      Category:
+                    </label>
+                    <div className="mt-1">  
+                      <select className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="cars">
+                        <option value selected>Select</option>
+                        <option value="juice">Juice Drink</option>
+                        <option value="spirits">Spirits</option>
+                        <option value="fronzen">Frozen Drink</option>
+                        <option value="cocktail">Cocktail</option>
+                        <option value="soda">Hard Soda</option>
+                        <option value="mixed">Mixed Drink</option>
+                      </select>
+                    </div>  
+                  </div>
 
 
                 </div>
