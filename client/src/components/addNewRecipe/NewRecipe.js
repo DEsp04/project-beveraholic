@@ -2,7 +2,10 @@ import { useState } from "react";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
+  const [beverageName, setBeverageName] = useState("");
   const [category, setCategory] = useState("");
+  const [alcoholContent, setAlcoholContent] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   console.log(category)
 
@@ -56,7 +59,7 @@ export default function Modal() {
                         type="name"
                         required
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        // onChange={(e) => setLoginEmail(e.target.value)}
+                        onChange={(e) => setBeverageName(e.target.value)}
                       />
                     </div>  
                   </div>
@@ -92,7 +95,7 @@ export default function Modal() {
                     </label>
                     <div className="mt-1">  
                         <select className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
-                        // onChange={(e) => setAlcoholContent(e.target.value)}
+                        onChange={(e) => setAlcoholContent(e.target.value)}
                         >
                         <option value selected>Select</option>
                         <option value="alcoholic">Alcoholic</option>
@@ -101,6 +104,24 @@ export default function Modal() {
                     </div>  
                   </div>
 
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                    <label
+                      htmlFor="img"
+                      className="block text-sm font-medium text-spring-wood-500"
+                    >
+                      Image URL
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        id="img"
+                        name="img"
+                        type="img"
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        onChange={(e) => setImageUrl(e.target.value)}
+                      />
+                    </div>  
+                  </div>
 
                 </div>
                   
