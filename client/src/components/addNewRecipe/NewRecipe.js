@@ -1,8 +1,11 @@
-import React from "react";
-
+import { useState } from "react";
 
 export default function Modal() {
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [category, setCategory] = useState("");
+
+  console.log(category)
+
   return (
     <>
       <button
@@ -66,14 +69,34 @@ export default function Modal() {
                       Category:
                     </label>
                     <div className="mt-1">  
-                      <select className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="cars">
+                        <select className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="category"
+                        onChange={(e) => setCategory(e.target.value)}
+                        >
                         <option value selected>Select</option>
-                        <option value="juice">Juice Drink</option>
+                        <option value="juice drink">Juice Drink</option>
                         <option value="spirits">Spirits</option>
-                        <option value="fronzen">Frozen Drink</option>
+                        <option value="fronzen drink">Frozen Drink</option>
                         <option value="cocktail">Cocktail</option>
-                        <option value="soda">Hard Soda</option>
-                        <option value="mixed">Mixed Drink</option>
+                        <option value="hard soda">Hard Soda</option>
+                        <option value="mixed drink">Mixed Drink</option>
+                      </select>
+                    </div>  
+                  </div>
+
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                    <label
+                      htmlFor="alcohol"
+                      className="block text-sm font-medium text-spring-wood-500"
+                    >
+                      Alcohol Content:
+                    </label>
+                    <div className="mt-1">  
+                        <select className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
+                        // onChange={(e) => setAlcoholContent(e.target.value)}
+                        >
+                        <option value selected>Select</option>
+                        <option value="alcoholic">Alcoholic</option>
+                        <option value="non-alcoholic">Non-Alcoholic</option>
                       </select>
                     </div>  
                   </div>
