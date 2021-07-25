@@ -1,8 +1,17 @@
-import React from "react";
-
+import { useState } from "react";
 
 export default function Modal() {
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [beverageName, setBeverageName] = useState("");
+  const [category, setCategory] = useState("");
+  const [alcoholContent, setAlcoholContent] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [beverageIngredient, setBeverageIngredient] = useState("");
+  const [instruction, setInstruction] = useState("");
+
+
+  console.log(category)
+
   return (
     <>
       <button
@@ -38,51 +47,88 @@ export default function Modal() {
                   </h3>
                 
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
+                <div className="relative px-6 pb-2 flex-auto">
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-spring-wood-500"
-                    >
-                      Name
-                    </label>
                     <div className="mt-1">
                       <input
                         id="name"
                         name="name"
                         type="name"
+                        placeholder="Name"
                         required
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        // onChange={(e) => setLoginEmail(e.target.value)}
+                        onChange={(e) => setBeverageName(e.target.value)}
                       />
                     </div>  
                   </div>
                     
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                    <label
-                      htmlFor="category"
-                      className="block text-sm font-medium text-spring-wood-500"
-                    >
-                      Category:
-                    </label>
                     <div className="mt-1">  
-                      <select className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="cars">
-                        <option value selected>Select</option>
-                        <option value="juice">Juice Drink</option>
+                        <select className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="category"
+                        onChange={(e) => setCategory(e.target.value)}
+                        >
+                        <option value selected>--Category--</option>
+                        <option value="juice drink">Juice Drink</option>
                         <option value="spirits">Spirits</option>
-                        <option value="fronzen">Frozen Drink</option>
+                        <option value="fronzen drink">Frozen Drink</option>
                         <option value="cocktail">Cocktail</option>
-                        <option value="soda">Hard Soda</option>
-                        <option value="mixed">Mixed Drink</option>
+                        <option value="hard soda">Hard Soda</option>
+                        <option value="mixed drink">Mixed Drink</option>
                       </select>
                     </div>  
+                  </div>
+
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">                
+                    <div className="mt-1">  
+                        <select className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
+                        onChange={(e) => setAlcoholContent(e.target.value)}
+                        >
+                        <option value selected>--Alcholic Content--</option>
+                        <option value="alcoholic">Alcoholic</option>
+                        <option value="non-alcoholic">Non-Alcoholic</option>
+                      </select>
+                    </div>  
+                  </div>
+
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                    <div className="mt-1">
+                      <input
+                        id="img"
+                        placeholder="Image URL"  
+                        name="img"
+                        type="img"
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        onChange={(e) => setImageUrl(e.target.value)}
+                      />
+                    </div>  
+                  </div>            
+
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                    <div className="mt-1">
+                      <input
+                        id="ingredient"
+                        name="ingredient"
+                        type="ingredient"
+                        placeholder="Ingredient"  
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        onChange={(e) => setBeverageIngredient(e.target.value)}
+                      />
+                    </div>  
+                  </div>
+
+                  <div className="my-4 text-blueGray-500 text-lg leading-relaxed">  
+                    <div className="mt-1">
+                      <textarea id="instruction" name="instruction" placeholder="Instruction" rows="3" cols="40" className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onChange={(e) => setInstruction(e.target.value)}></textarea>
+                    </div>
                   </div>
 
 
                 </div>
                   
                 {/*footer*/}
-                  <div className="flex items-center justify-center p-6 rounded-b">
+                  <div className="flex items-center justify-center p-6 pt-2 rounded-b">
                     <button
                       className="w-1/3 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold font-medium text-spring-wood-500 bg-vin-rouge-500 hover:bg-vin-rouge-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500"
                       type="button"
