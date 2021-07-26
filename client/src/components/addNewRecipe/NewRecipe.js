@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createNewBeverage } from "../../redux/addNewBeverageSlice";
+import { fetchDrinks } from "../../redux/beveragesSlice";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
+  const [add, setAdd] = useState(false);
   const [beverageName, setBeverageName] = useState("");
   const [category, setCategory] = useState("");
   const [alcoholContent, setAlcoholContent] = useState("");
@@ -9,8 +13,21 @@ export default function Modal() {
   const [beverageIngredient, setBeverageIngredient] = useState("");
   const [instruction, setInstruction] = useState("");
 
+  const dispatch = useDispatch();
 
-  console.log(category)
+
+  const addBeverage = (e) => {
+    e.preventDefault();
+  
+    if (beverageName.length > 0 && category.length > 0  && alcoholContent.length > 0  && beverageIngredient.length > 0 && instruction.length > 0) {
+       dispatch(createNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction }))
+    }
+  };
+
+  useEffect(() => {
+    dispatch(fetchDrinks());
+  }, [add===true])
+
 
   return (
     <>
@@ -64,10 +81,15 @@ export default function Modal() {
                     
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <div className="mt-1">  
-                        <select className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="category"
-                        onChange={(e) => setCategory(e.target.value)}
+                        <select
+                          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="category"
+                          onChange={(e) => setCategory(e.target.value)}
+                          id="category"
+                          name="category"
+                          type="category"
+                          defaultValue=""
                         >
-                        <option value selected>--Category--</option>
+                        <option value="" disabled>--Category--</option>
                         <option value="juice drink">Juice Drink</option>
                         <option value="spirits">Spirits</option>
                         <option value="fronzen drink">Frozen Drink</option>
@@ -80,12 +102,17 @@ export default function Modal() {
 
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">                
                     <div className="mt-1">  
-                        <select className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
-                        onChange={(e) => setAlcoholContent(e.target.value)}
+                        <select
+                          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
+                          onChange={(e) => setAlcoholContent(e.target.value)}
+                          id="content"
+                          name="content"
+                          type="content"
+                          defaultValue=""
                         >
-                        <option value selected>--Alcholic Content--</option>
-                        <option value="alcoholic">Alcoholic</option>
-                        <option value="non-alcoholic">Non-Alcoholic</option>
+                        <option value="" disabled>--Alcholic Content--</option>
+                        <option value="Alcoholic">Alcoholic</option>
+                        <option value="Non-alcoholic">Non-Alcoholic</option>
                       </select>
                     </div>  
                   </div>
@@ -131,8 +158,14 @@ export default function Modal() {
                   <div className="flex items-center justify-center p-6 pt-2 rounded-b">
                     <button
                       className="w-1/3 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold font-medium text-spring-wood-500 bg-vin-rouge-500 hover:bg-vin-rouge-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500"
-                      type="button"
-                      onClick={() => setShowModal(false)}
+                      type="submit"
+                      onClick={
+                        (e) => {
+                          setShowModal(false)
+                          setAdd(true)
+                          addBeverage(e)
+                        }
+                      }
                     >
                       Add
                     </button>
