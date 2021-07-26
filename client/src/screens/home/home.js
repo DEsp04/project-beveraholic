@@ -19,6 +19,8 @@ export default function Home() {
   const userStatus = useSelector((state) => state.loadedUser)
   console.log(reduxState)
   console.log(userStatus)
+  
+  const status = useSelector((state) => state.getBeverages.status);
 
   const userToken = localStorage.getItem("userToken");
 
@@ -36,23 +38,26 @@ export default function Home() {
     }
   }
 
+  function showBeverages(){
+    if (status === "loading" || status === "failed") {
+      return <div className="h-screen"></div>
+    } else if (status === "success") {
+      return <Beverages />
+    }
+  }
+
   return (
     <Layout>
-      {/* <FullHeight> */}
-        <main className="py-10">
+        <main className="py-10 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             { userName() }
           </div>
           <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
-            <SearchInput />
-            <Beverages />
-            {/* <div className="px-4 py-8 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-            </div> */}
-
-          </div>
+          <SearchInput /> 
+        </div>
+        
+        { showBeverages() }
         </main>
-      {/* </FullHeight> */}
     </Layout>
   );
 }

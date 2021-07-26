@@ -15,6 +15,7 @@ export default function BeveragePost(props) {
         />
       </div>
       <h3>{props.beverage_name}</h3>
+      <h2>{props.alcohol_content}</h2>
       
     </div>
   )
