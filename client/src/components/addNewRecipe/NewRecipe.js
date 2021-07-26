@@ -10,8 +10,7 @@ export default function Modal() {
   const [beverageIngredient, setBeverageIngredient] = useState("");
   const [instruction, setInstruction] = useState("");
 
-
-  console.log(category, beverageName, alcoholContent, imageUrl, beverageIngredient, instruction)
+  const dispatch = useDispatch();
 
 
   const addBeverage = (e) => {
@@ -20,6 +19,8 @@ export default function Modal() {
     // if (loginEmail.length > 0 && loginPassword.length > 0) {
     //   dispatch(fetchUser({ loginEmail, loginPassword }))
     // }
+
+    dispatch(fetchUser({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction }))
   };
 
 
