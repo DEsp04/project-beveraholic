@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { logInUser } from "../services/signInUser";
+import { addNewBeverage } from "../services/addNewBeverages";
 
 
 
@@ -9,11 +9,11 @@ export const createNewBeverage = createAsyncThunk(
     
     console.log(beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction);
 
-    // const data = logInUser({ loginEmail, loginPassword })
+    // const data = addNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction })
     
     // console.log(data)
 
-    return data;
+    // return data;
   }
 );
 

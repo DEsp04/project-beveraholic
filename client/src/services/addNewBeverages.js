@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function logInUser( { loginEmail, loginPassword } ) {
+export async function addNewBeverage( { loginEmail, loginPassword } ) {
   
   const config = {
     headers: {
@@ -8,16 +8,20 @@ export async function logInUser( { loginEmail, loginPassword } ) {
     },
   };
 
-  // const body = JSON.stringify({ loginEmail, loginPassword });
+
 
   const results = axios({
     config,
     method: "POST",
     data: {
-      email: loginEmail,
-      password: loginPassword
+      beverage_name: loginEmail,
+      beverage_image: loginPassword,
+      beverage_category: "",
+      alcohol_content: "",
+      ingredients: "",
+      instruction: "" 
     },
-    url: "https://beveraholicapp.herokuapp.com/api/login",
+    url: "https://beveraholicapp.herokuapp.com/api/beverages",
   }).then((res) => {
     console.log(res)
     return res.data
@@ -25,3 +29,4 @@ export async function logInUser( { loginEmail, loginPassword } ) {
 
   return results;
 }
+

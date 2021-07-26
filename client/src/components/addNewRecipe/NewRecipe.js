@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { createNewBeverage } from "../../redux/addNewBeverageSlice";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,7 @@ export default function Modal() {
     //   dispatch(fetchUser({ loginEmail, loginPassword }))
     // }
 
-    dispatch(fetchUser({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction }))
+    dispatch(createNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction }))
   };
 
 
