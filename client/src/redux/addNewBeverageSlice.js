@@ -9,11 +9,11 @@ export const createNewBeverage = createAsyncThunk(
     
     console.log(beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction);
 
-    // const data = addNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction })
+    const data = addNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction })
     
-    // console.log(data)
+    console.log(data)
 
-    // return data;
+    return data;
   }
 );
 

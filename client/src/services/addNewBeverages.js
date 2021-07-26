@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function addNewBeverage( { loginEmail, loginPassword } ) {
+export async function addNewBeverage( { beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction } ) {
   
   const config = {
     headers: {
@@ -14,12 +14,12 @@ export async function addNewBeverage( { loginEmail, loginPassword } ) {
     config,
     method: "POST",
     data: {
-      beverage_name: loginEmail,
-      beverage_image: loginPassword,
-      beverage_category: "",
-      alcohol_content: "",
-      ingredients: "",
-      instruction: "" 
+      beverage_name: beverageName,
+      beverage_image: imageUrl,
+      beverage_category: category,
+      alcohol_content: alcoholContent,
+      ingredients: beverageIngredient,
+      instruction: instruction 
     },
     url: "https://beveraholicapp.herokuapp.com/api/beverages",
   }).then((res) => {
