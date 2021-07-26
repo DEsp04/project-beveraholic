@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <FullHeight>
+      {/* <FullHeight> */}
         <main className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             { userName() }
@@ -52,7 +52,7 @@ export default function Home() {
 
           </div>
         </main>
-      </FullHeight>
+      {/* </FullHeight> */}
     </Layout>
   );
 }
