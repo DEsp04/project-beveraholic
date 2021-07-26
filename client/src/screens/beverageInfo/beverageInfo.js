@@ -31,10 +31,10 @@ export default function beverageInfo(props) {
               </div>
             </div>
             <div>
-              <p>Name: {props.location.state.name}</p>
-              <p>Category: {props.location.state.category}</p>
-              <p>Alchohol Content: {props.location.state.content}</p>
-              <p>Ingredient: {props.location.state.ingredient}</p>
+              <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Name:</span> {props.location.state.name}</p>
+              <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Category:</span> {props.location.state.category}</p>
+              <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Alchohol Content:</span> {props.location.state.content}</p>
+              <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Ingredient:</span> {props.location.state.ingredient}</p>
             </div>
             {/* /End replace */}
           </div>
