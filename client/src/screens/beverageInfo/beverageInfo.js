@@ -20,12 +20,13 @@ export default function beverageInfo(props) {
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {/* Replace with your content */}
             <div className="px-4 py-8 sm:px-0">
-              <h2>{props.location.state.name}</h2>
+              <h2  className="text-center text-iv font-bold">{props.location.state.name}</h2>
 
-              <div>
+              <div className="text-center rounded-md px-4 m-1 p-2 border border-vin-rouge-500 w-26 h-50 mx-auto">
                 <img
                   src={props.location.state.image}
-                  alt=""
+                alt=""
+                className="h-full w-full rounded-none 100%"
                 />
               </div>
             </div>
