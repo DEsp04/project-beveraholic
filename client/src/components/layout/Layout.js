@@ -4,7 +4,7 @@ import FullHeight from "react-full-height";
 
 export default function Layout(props) {
   return (
-    <div class="bg-soapstone-500">
+    <div className="bg-soapstone-500">
       <Header />
         {props.children}
     </div>
