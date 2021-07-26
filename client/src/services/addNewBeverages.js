@@ -23,7 +23,7 @@ export async function addNewBeverage( { beverageName, imageUrl, category, alcoho
     },
     url: "https://beveraholicapp.herokuapp.com/api/beverages",
   }).then((res) => {
-    console.log(res)
+    // console.log(res)
     return res.data
   })
 

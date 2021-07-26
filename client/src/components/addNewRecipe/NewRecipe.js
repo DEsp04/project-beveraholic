@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewBeverage } from "../../redux/addNewBeverageSlice";
+import { fetchDrinks } from "../../redux/beveragesSlice";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
+  const [add, setAdd] = useState(false);
   const [beverageName, setBeverageName] = useState("");
   const [category, setCategory] = useState("");
   const [alcoholContent, setAlcoholContent] = useState("");
@@ -16,13 +18,15 @@ export default function Modal() {
 
   const addBeverage = (e) => {
     e.preventDefault();
-    console.log("added new beverage", e)
-    // if (loginEmail.length > 0 && loginPassword.length > 0) {
-    //   dispatch(fetchUser({ loginEmail, loginPassword }))
-    // }
-
-    dispatch(createNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction }))
+  
+    if (beverageName.length > 0 && category.length > 0  && alcoholContent.length > 0  && beverageIngredient.length > 0 && instruction.length > 0) {
+       dispatch(createNewBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction }))
+    }
   };
+
+  useEffect(() => {
+    dispatch(fetchDrinks());
+  }, [add===true])
 
 
   return (
@@ -158,6 +162,7 @@ export default function Modal() {
                       onClick={
                         (e) => {
                           setShowModal(false)
+                          setAdd(true)
                           addBeverage(e)
                         }
                       }
