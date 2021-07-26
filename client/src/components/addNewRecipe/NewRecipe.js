@@ -111,8 +111,8 @@ export default function Modal() {
                           defaultValue=""
                         >
                         <option value="" disabled>--Alcholic Content--</option>
-                        <option value="alcoholic">Alcoholic</option>
-                        <option value="non-alcoholic">Non-Alcoholic</option>
+                        <option value="Alcoholic">Alcoholic</option>
+                        <option value="Non-alcoholic">Non-Alcoholic</option>
                       </select>
                     </div>  
                   </div>
