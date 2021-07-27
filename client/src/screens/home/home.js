@@ -53,8 +53,8 @@ export default function Home() {
             { userName() }
           </div>
           <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
-          <SearchInput /> 
-        </div>
+            <SearchInput /> 
+          </div>
         { showBeverages() }
         </main>
     </Layout>

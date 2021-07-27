@@ -9,7 +9,7 @@ import BeverageInfo from "./screens/beverageInfo/beverageInfo"
 import User from "./screens/user/User";
 import PrivateRoute from "./routing/PrivateRoute";
 import Footer from "./components/footer/Footer";
-
+import FullHeight from "react-full-height";
 
 function App() {
 
