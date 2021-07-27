@@ -26,7 +26,7 @@ export default function beverageInfo(props) {
                 <img
                   src={props.location.state.image}
                 alt=""
-                className="h-full w-full rounded-none 100%"
+                className="h-full w-full rounded-md 100%"
                 />
               </div>
             </div>

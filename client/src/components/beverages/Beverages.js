@@ -26,7 +26,6 @@ export default function Beverages() {
   
   return (
     <div>
-      <h2>Beverages</h2>
       {/* render beverage list below */}
       <div className="flex justify-start items-center flex-wrap mb-16">
         {renderList()}
