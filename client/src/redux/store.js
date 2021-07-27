@@ -4,6 +4,7 @@ import loadUserReducer from "./loadUserSlice";
 import registerUserReducer from "./registerUserSlice";
 import getBeveragesReducer from "./beveragesSlice";
 import newBeverageReducer from "./addNewBeverageSlice";
+import searchTermSlice from "./searchTermSlice";
 
 
 export default configureStore({
@@ -13,5 +14,6 @@ export default configureStore({
     registeredUser: registerUserReducer,
     getBeverages: getBeveragesReducer,
     newBeverage: newBeverageReducer,
+    searchTerm: searchTermSlice
   },
 });

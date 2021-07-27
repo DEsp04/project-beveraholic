@@ -48,14 +48,13 @@ export default function Home() {
 
   return (
     <Layout>
-        <main className="py-10 ">
+        <main className="py-10  min-h-screen">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             { userName() }
           </div>
           <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
-          <SearchInput /> 
-        </div>
-        
+            <SearchInput /> 
+          </div>
         { showBeverages() }
         </main>
     </Layout>
