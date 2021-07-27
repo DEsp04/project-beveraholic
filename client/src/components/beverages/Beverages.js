@@ -21,15 +21,6 @@ export default function Beverages() {
 
 
 
-
-
-
-
-
-
-
-
-
   const renderList = () => {
     if (status === "success") {
       return beverageList.filter((val) => {
