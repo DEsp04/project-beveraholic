@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addNewBeverage } from "../services/addNewBeverages";
-
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 export const createNewBeverage = createAsyncThunk(
