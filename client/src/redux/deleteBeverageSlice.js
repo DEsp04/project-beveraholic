@@ -12,7 +12,7 @@ export const deleteBeverage = createAsyncThunk(
     
     // console.log(data)
 
-    return data;
+    // return data;
   }
 );
 

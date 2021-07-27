@@ -3,17 +3,22 @@ import { NavLink } from "react-router-dom";
 import "./beveragePost.css"
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import {  deleteBeverage } from "../../redux/deleteBeverageSlice"
 
 
 export default function BeveragePost(props) {
   console.log(props._id)
   console.log(props)
-  const [deleteItem, setDeleteItem] = useState("")
+  const [id, setId] = useState("");
+  const dispatch = useDispatch();
 
-  const deleteBeverage = (e) => {
+  const deleteItem = (e) => {
     e.preventDefault();
-    console.log(deleteItem)
+    console.log(id)
+
+    if (id.length > 0) {
+      dispatch(deleteBeverage({ id }))
+    }
 
   }
 
@@ -26,8 +31,8 @@ export default function BeveragePost(props) {
                       className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                       onClick={
                         (e) => {
-                          deleteBeverage(e)
-                          setDeleteItem(props._id)
+                          setId(props._id)
+                          deleteItem(e)
                         }
                       }
                   >
