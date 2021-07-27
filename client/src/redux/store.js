@@ -5,6 +5,7 @@ import registerUserReducer from "./registerUserSlice";
 import getBeveragesReducer from "./beveragesSlice";
 import newBeverageReducer from "./addNewBeverageSlice";
 import searchTermSlice from "./searchTermSlice";
+import deleteItemReducer from "./deleteBeverageSlice";
 
 
 export default configureStore({
@@ -14,6 +15,7 @@ export default configureStore({
     registeredUser: registerUserReducer,
     getBeverages: getBeveragesReducer,
     newBeverage: newBeverageReducer,
-    searchTerm: searchTermSlice
+    searchTerm: searchTermSlice,
+    deleteItem: deleteItemReducer,
   },
 });
