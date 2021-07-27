@@ -1,20 +1,35 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 import "./beveragePost.css"
+import { useState } from "react";
 
 
 
 
 export default function BeveragePost(props) {
+  console.log(props._id)
   console.log(props)
+  const [deleteItem, setDeleteItem] = useState("")
+
+  const deleteBeverage = (e) => {
+    e.preventDefault();
+    console.log(deleteItem)
+
+  }
+
   
   return (
     <div className="text-center rounded-md px-10 m-1 p-2 bg-shark-500 md:mx-10 mx-0 w-auto">
 
 <div className="xbutton flex items-start justify-between pt-2 rounded-t">
                   <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    // onClick={() => setShowModal(false)}
+                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                      onClick={
+                        (e) => {
+                          deleteBeverage(e)
+                          setDeleteItem(props._id)
+                        }
+                      }
                   >
                     <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
                       ×
