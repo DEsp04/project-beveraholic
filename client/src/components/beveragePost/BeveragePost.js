@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import "./beveragePost.css"
+
 
 
 
@@ -9,7 +11,7 @@ export default function BeveragePost(props) {
   return (
     <div className="text-center rounded-md px-10 m-1 p-2 bg-shark-500 md:mx-10 mx-0 w-auto">
 
-<div className="flex items-start justify-between pt-4 mr-3  rounded-t">
+<div className="xbutton flex items-start justify-between pt-2 rounded-t">
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                     // onClick={() => setShowModal(false)}
