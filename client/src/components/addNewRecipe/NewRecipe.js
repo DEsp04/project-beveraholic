@@ -24,11 +24,7 @@ export default function Modal() {
     }
   };
 
-  useEffect(() => {
-    dispatch(fetchDrinks());
-  }, [add===true])
-
-
+  
   return (
     <>
       <button

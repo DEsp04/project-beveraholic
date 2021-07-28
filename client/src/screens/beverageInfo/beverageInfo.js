@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from "../../components/layout/Layout"
-import FullHeight from "react-full-height";
+
 
 
 
@@ -10,7 +10,6 @@ export default function beverageInfo(props) {
 
   return (
     <Layout>
-      {/* <FullHeight> */}
         <main className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold leading-tight text-gray-900">
@@ -39,7 +38,6 @@ export default function beverageInfo(props) {
             {/* /End replace */}
           </div>
         </main>
-      {/* </FullHeight>  */}
     </Layout> 
   )
 }

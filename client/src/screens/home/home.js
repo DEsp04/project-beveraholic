@@ -21,6 +21,7 @@ export default function Home() {
   console.log(userStatus)
   
   const status = useSelector((state) => state.getBeverages.status);
+  const newBeverageStatus = useSelector((state) => state.newBeverage.status)
 
   const userToken = localStorage.getItem("userToken");
 
@@ -28,6 +29,13 @@ export default function Home() {
     dispatch(fetchLoadUser(userToken));
     dispatch(fetchDrinks());
   }, [])
+
+  useEffect(() => {
+    dispatch(fetchDrinks());
+  }, [newBeverageStatus === "success"])
+
+
+
  
   const userName = () => {
     if (userStatus.isAuthenticate === "true") {
