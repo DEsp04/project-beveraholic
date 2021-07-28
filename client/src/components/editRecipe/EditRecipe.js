@@ -1,10 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export default function EditRecipe({ state }) {
   const [showModal, setShowModal] = useState(false);
-  console.log(state)
+  console.log("beverageId:", state.location.state.userId)
+  console.log("userId:", state.location.state.beverageId)
 
+
+
+
+
+  
   const update = () => {
     console.log("hello")
   }
@@ -46,7 +53,7 @@ export default function EditRecipe({ state }) {
                 
                 <form className="space-y-6" action="#" method="POST">
                   <h3 className="text-xxxl font-extrabold text-spring-wood-500 text-center">
-                    Add New Recipe
+                    Edit Recipe
                   </h3>
                 
                 {/*body*/}
@@ -155,7 +162,7 @@ export default function EditRecipe({ state }) {
                       //   }
                       // }
                     >
-                      Add
+                      Update
                     </button>
                   </div>
                 </form>

@@ -10,6 +10,8 @@ export default function beverageInfo(props) {
   console.log(props)
   
 
+  
+
 
   return (
     <Layout>
