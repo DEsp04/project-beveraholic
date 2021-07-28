@@ -1,22 +1,50 @@
 import React from 'react'
 import Layout from "../../components/layout/Layout"
-import FullHeight from "react-full-height";
+import { NavLink } from "react-router-dom";
+import EditRecipe from '../../components/editRecipe/EditRecipe';
 
 
 
 export default function beverageInfo(props) {
 
   console.log(props)
+  
+
+  
+
 
   return (
     <Layout>
-      {/* <FullHeight> */}
-        <main className="py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold leading-tight text-gray-900">
-              Beverage Information
-            </h1>
+      <main className="py-10">
+        <EditRecipe state={props} />
+
+        
+
+        <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
+        <div className="mt-1 flex justify-center rounded-md mb-8">
+            <NavLink
+              to={{pathname: "/home"}}
+            >
+            <button
+              className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+              type="button"
+              // onClick={() => setShowModal(true)}
+            >
+               Go Back
+              </button>
+            </NavLink>      
+
+            <button
+              className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+              type="button"
+              // onClick={() => setShowModal(true)}
+            >
+               Save
+            </button>
           </div>
+        </div>
+
+      
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {/* Replace with your content */}
             <div className="px-4 py-8 sm:px-0">
@@ -39,7 +67,6 @@ export default function beverageInfo(props) {
             {/* /End replace */}
           </div>
         </main>
-      {/* </FullHeight>  */}
     </Layout> 
   )
 }

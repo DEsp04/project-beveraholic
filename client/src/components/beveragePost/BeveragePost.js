@@ -2,13 +2,16 @@ import React from 'react'
 import { NavLink } from "react-router-dom";
 import "./beveragePost.css"
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {  deleteBeverage } from "../../redux/deleteBeverageSlice"
 
 
 export default function BeveragePost(props) {
   // console.log(props._id)
   // console.log(props)
+  const userId = useSelector((state) => state.loadedUser.loadedUser._id);
+
+
   const [id, setId] = useState("");
   const dispatch = useDispatch();
 
@@ -19,28 +22,44 @@ export default function BeveragePost(props) {
     if (id.length > 0) {
       dispatch(deleteBeverage({ id }))
     }
+  }
 
+  const deleteButton = () => {
+    if (props.user._id === userId) {
+      return <div className="xbutton flex items-start justify-between pt-2 rounded-t">
+        <button
+          className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          onClick={
+            (e) => {
+              setId(props._id)
+              deleteItem(e)
+            }
+          }
+        >
+          <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
+            ×
+          </span>
+        </button>
+      </div>
+    } else if(props.user._id !== userId) {
+      return <div className="xbutton flex items-start justify-between pt-2 rounded-t">
+        <div
+          className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+        >
+          <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
+            🚫
+          </span>
+        </div>
+      </div>
+    }
   }
 
   
   return (
     <div className="text-center rounded-md px-10 m-1 p-2 bg-shark-500 md:mx-10 mx-0 w-auto">
+      
+      {deleteButton()}
 
-<div className="xbutton flex items-start justify-between pt-2 rounded-t">
-                  <button
-                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                      onClick={
-                        (e) => {
-                          setId(props._id)
-                          deleteItem(e)
-                        }
-                      }
-                  >
-                    <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
-                      ×
-                    </span>
-                  </button>
-                </div>
       <div>
         <img
            className="h-40 w-full rounded-md 100%"
@@ -64,6 +83,8 @@ export default function BeveragePost(props) {
                 content: props.alcohol_content,
                 instruction: props.instruction,
                 ingredient: props.ingredients,
+                userId: props.user._id,
+                beverageId: props._id,
               }
             : {},
         }}
