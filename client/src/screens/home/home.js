@@ -3,10 +3,7 @@ import Layout from "../../components/layout/Layout";
 import SearchInput from "../../components/searchinput/SearchInput.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchLoadUser } from "../../redux/loadUserSlice";
-
 import { fetchDrinks } from "../../redux/beveragesSlice";
-
-import FullHeight from "react-full-height";
 import Beverages from "../../components/beverages/Beverages";
 
 
@@ -22,6 +19,7 @@ export default function Home() {
   
   const status = useSelector((state) => state.getBeverages.status);
   const newBeverageStatus = useSelector((state) => state.newBeverage.status)
+  const deleteItemStatus = useSelector((state) => state.deleteItem.status)
 
   const userToken = localStorage.getItem("userToken");
 
@@ -33,6 +31,14 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchDrinks());
   }, [newBeverageStatus === "success"])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(fetchDrinks());
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [deleteItemStatus === "success"])
+
 
 
 

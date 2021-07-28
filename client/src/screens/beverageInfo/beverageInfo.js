@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from "../../components/layout/Layout"
+import { NavLink } from "react-router-dom";
 
 
 
@@ -10,7 +11,32 @@ export default function beverageInfo(props) {
 
   return (
     <Layout>
-        <main className="py-10">
+      <main className="py-10">
+        <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
+        <div className="mt-1 flex justify-center rounded-md mb-12">
+            <NavLink
+              to={{pathname: "/home"}}
+            >
+            <button
+              className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+              type="button"
+              // onClick={() => setShowModal(true)}
+            >
+               Go Back
+              </button>
+            </NavLink>      
+
+            <button
+              className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+              type="button"
+              // onClick={() => setShowModal(true)}
+            >
+               Save
+            </button>
+          </div>
+        </div>
+
+        
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold leading-tight text-gray-900">
               Beverage Information

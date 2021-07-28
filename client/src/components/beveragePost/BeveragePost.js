@@ -25,9 +25,9 @@ export default function BeveragePost(props) {
   }
 
   const deleteButton = () => {
-    if(props.user._id === userId) {
+    if (props.user._id === userId) {
       return <div className="xbutton flex items-start justify-between pt-2 rounded-t">
-      <button
+        <button
           className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
           onClick={
             (e) => {
@@ -35,12 +35,22 @@ export default function BeveragePost(props) {
               deleteItem(e)
             }
           }
-      >
-        <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
-          ×
-        </span>
-      </button>
-</div>
+        >
+          <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
+            ×
+          </span>
+        </button>
+      </div>
+    } else if(props.user._id !== userId) {
+      return <div className="xbutton flex items-start justify-between pt-2 rounded-t">
+        <div
+          className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+        >
+          <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
+            🚫
+          </span>
+        </div>
+      </div>
     }
   }
 
