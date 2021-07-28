@@ -10,7 +10,7 @@ export default function beverageInfo(props) {
   console.log(props)
   
 
-  
+
 
 
   return (
@@ -62,7 +62,8 @@ export default function beverageInfo(props) {
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Name:</span> {props.location.state.name}</p>
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Category:</span> {props.location.state.category}</p>
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Alchohol Content:</span> {props.location.state.content}</p>
-              <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Ingredient:</span> {props.location.state.ingredient}</p>
+            <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Ingredient:</span> {props.location.state.ingredient}</p>
+            <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Instruction:</span> {props.location.state.instruction}</p>
             </div>
             {/* /End replace */}
           </div>

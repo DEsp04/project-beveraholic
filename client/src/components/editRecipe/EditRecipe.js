@@ -14,12 +14,12 @@ export default function EditRecipe({ state }) {
   console.log(state.location.state)
 
 
-  const [beverageName, setBeverageName] = useState("");
-  const [category, setCategory] = useState("");
-  const [alcoholContent, setAlcoholContent] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [beverageIngredient, setBeverageIngredient] = useState("");
-  const [instruction, setInstruction] = useState("");
+  const [beverageName, setBeverageName] = useState(state.location.state.name);
+  const [category, setCategory] = useState(state.location.state.category);
+  const [alcoholContent, setAlcoholContent] = useState(state.location.state.content);
+  const [imageUrl, setImageUrl] = useState(state.location.state.image);
+  const [beverageIngredient, setBeverageIngredient] = useState(state.location.state.ingredient);
+  const [instruction, setInstruction] = useState(state.location.state.instruction);
 
 
   const dispatch = useDispatch();
@@ -30,6 +30,7 @@ export default function EditRecipe({ state }) {
     dispatch(updateBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction, beverageId }))
     console.log("hello")
   }
+
 
 
 
@@ -78,7 +79,6 @@ export default function EditRecipe({ state }) {
                         name="name"
                         type="name"
                         placeholder="Name"
-                        value={ state.location.state.name }
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         onChange={(e) => setBeverageName(e.target.value)}
                       />
@@ -91,7 +91,6 @@ export default function EditRecipe({ state }) {
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="category"
                           onChange={(e) => setCategory(e.target.value)}
                           id="category"
-                          value={ state.location.state.category }
                           name="category"
                           type="category"
                           defaultValue=""
@@ -112,7 +111,6 @@ export default function EditRecipe({ state }) {
                         <select
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
                           onChange={(e) => setAlcoholContent(e.target.value)}
-                          value={state.location.state.content}
                           id="content"
                           name="content"
                           type="content"
@@ -134,7 +132,6 @@ export default function EditRecipe({ state }) {
                           type="img"
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           onChange={(e) => setImageUrl(e.target.value)}
-                          value={ state.location.state.image}
                       />
                     </div>  
                   </div>            
@@ -148,7 +145,6 @@ export default function EditRecipe({ state }) {
                           placeholder="Ingredient"
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           onChange={(e) => setBeverageIngredient(e.target.value)}
-                          value={ state.location.state.ingredient}
                       />
                     </div>  
                   </div>
@@ -157,7 +153,6 @@ export default function EditRecipe({ state }) {
                     <div className="mt-1">
                         <textarea id="instruction" name="instruction" placeholder="Instruction" rows="3" cols="40" className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           onChange={(e) => setInstruction(e.target.value)}
-                          value={ state.location.state.instruction}
                         ></textarea>
                     </div>
                   </div>
