@@ -7,14 +7,14 @@ import {  deleteBeverage } from "../../redux/deleteBeverageSlice"
 
 
 export default function BeveragePost(props) {
-  console.log(props._id)
-  console.log(props)
+  // console.log(props._id)
+  // console.log(props)
   const [id, setId] = useState("");
   const dispatch = useDispatch();
 
   const deleteItem = (e) => {
     e.preventDefault();
-    console.log(id)
+    // console.log(id)
 
     if (id.length > 0) {
       dispatch(deleteBeverage({ id }))

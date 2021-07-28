@@ -8,9 +8,9 @@ export const deleteBeverage = createAsyncThunk(
     
     console.log(id);
 
-    // const data = deleteDrink({ id })
+    const data = deleteDrink({ id })
     
-    // console.log(data)
+    console.log(data)
 
     // return data;
   }
