@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function addNewBeverage( { beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction } ) {
+export async function updateDrink( { beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction, beverageId } ) {
   
   const config = {
     headers: {
@@ -12,7 +12,7 @@ export async function addNewBeverage( { beverageName, imageUrl, category, alcoho
 
   const results = axios({
     config,
-    method: "POST",
+    method: "PUT",
     data: {
       beverage_name: beverageName,
       beverage_image: imageUrl,
@@ -21,7 +21,7 @@ export async function addNewBeverage( { beverageName, imageUrl, category, alcoho
       ingredients: beverageIngredient,
       instruction: instruction 
     },
-    url: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBlOWQ2YWNhNjJmNDcwY2MzOGRmMTE0In0sImlhdCI6MTYyNzUwMTk3NiwiZXhwIjoxNjI3ODYxOTc2fQ.YG3tDe3puDjSxBnwdvhxB1bdqhkSxeQreydbecu0dpA",
+    url: `https://beveraholicapp.herokuapp.com/api/beverages/${beverageId}`,
   }).then((res) => {
     // console.log(res)
     return res.data
@@ -29,4 +29,3 @@ export async function addNewBeverage( { beverageName, imageUrl, category, alcoho
 
   return results;
 }
-
