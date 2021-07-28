@@ -14,7 +14,7 @@ export default function Beverages() {
 
   const beverageList = useSelector((state) => state.getBeverages.beverages)
   const status = useSelector((state) => state.getBeverages.status);
-  console.log(beverageList)
+  // console.log(beverageList)
   const searchTerm = useSelector((state) => state.searchTerm.count)
 
 

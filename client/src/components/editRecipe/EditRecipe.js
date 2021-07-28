@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function EditRecipe() {
+export default function EditRecipe({state}) {
+  console.log(state)
 
   const update = () => {
     console.log("hello")

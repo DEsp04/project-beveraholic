@@ -83,6 +83,8 @@ export default function BeveragePost(props) {
                 content: props.alcohol_content,
                 instruction: props.instruction,
                 ingredient: props.ingredients,
+                userId: props.user._id,
+                beverageId: props._id,
               }
             : {},
         }}

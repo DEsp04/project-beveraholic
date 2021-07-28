@@ -14,7 +14,7 @@ export default function beverageInfo(props) {
   return (
     <Layout>
       <main className="py-10">
-        <EditRecipe />
+        <EditRecipe state={props} />
 
         
 
