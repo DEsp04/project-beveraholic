@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 export async function updateDrink( { beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction, beverageId } ) {
   
   const config = {
