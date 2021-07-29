@@ -1,5 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 
 
@@ -14,13 +15,14 @@ const PrivateRoute = ({
   const status = reduxState.loadedUser.status;
 
   console.log(status)
+  const [updated, setUpdated] = useState(false);
 
 
   return <Route
     {...rest}
     render={(props) =>
      isAuthenticate === "true" || status === "success" ? (
-        <Component {...props} />
+        <Component updated={updated} setUpdated={setUpdated} {...props} />
       ) : (
         <Redirect to="/login" />
       )

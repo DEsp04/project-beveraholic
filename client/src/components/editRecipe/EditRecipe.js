@@ -1,22 +1,51 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { updateBeverage } from "../../redux/editBeverageSlice";
 
-export default function EditRecipe({ state }) {
+
+
+export default function EditRecipe({ state, update, setItem, item }) {
   const [showModal, setShowModal] = useState(false);
-  console.log("beverageId:", state.location.state.userId)
-  console.log("userId:", state.location.state.beverageId)
+  // const beverageId = state.location.state.userId
 
-
-
-
-
+  // console.log("beverageId:", state.location.state.userId)
+  // console.log("userId:", state.location.state.beverageId)
+  // console.log(state.location.state)
   
-  const update = () => {
-    console.log("hello")
-  }
+  const handleChange = (event) => {
+    const updatedField = { [event.target.name]: event.target.value };
+
+    const editedDrink = Object.assign(item, updatedField);
+
+    setItem(editedDrink);
+  };
 
 
+  // const [beverageName, setBeverageName] = useState(state.location.state.name);
+  // const [category, setCategory] = useState(state.location.state.category);
+  // const [alcoholContent, setAlcoholContent] = useState(state.location.state.content);
+  // const [imageUrl, setImageUrl] = useState(state.location.state.image);
+  // const [beverageIngredient, setBeverageIngredient] = useState(state.location.state.ingredient);
+  // const [instruction, setInstruction] = useState(state.location.state.instruction);
+
+
+  // const dispatch = useDispatch();
+
+ 
+  // const update = () => {
+  //   // e.preventDefault();
+
+  //   dispatch(updateBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction, beverageId }))
+  //   console.log("hello")
+
+  // }
+
+
+
+  useEffect(() => {
+
+  }, [])
 
 
 
@@ -65,9 +94,8 @@ export default function EditRecipe({ state }) {
                         name="name"
                         type="name"
                         placeholder="Name"
-                        required
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        // onChange={(e) => setBeverageName(e.target.value)}
+                        onChange={handleChange}
                       />
                     </div>  
                   </div>
@@ -76,7 +104,7 @@ export default function EditRecipe({ state }) {
                     <div className="mt-1">  
                         <select
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="category" id="category"
-                          // onChange={(e) => setCategory(e.target.value)}
+                          onChange={handleChange}
                           id="category"
                           name="category"
                           type="category"
@@ -97,7 +125,7 @@ export default function EditRecipe({ state }) {
                     <div className="mt-1">  
                         <select
                           className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="alcohol" id="alcohol"
-                          // onChange={(e) => setAlcoholContent(e.target.value)}
+                          onChange={handleChange}
                           id="content"
                           name="content"
                           type="content"
@@ -113,13 +141,12 @@ export default function EditRecipe({ state }) {
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <div className="mt-1">
                       <input
-                        id="img"
-                        placeholder="Image URL"  
-                        name="img"
-                        type="img"
-                        required
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        // onChange={(e) => setImageUrl(e.target.value)}
+                          id="img"
+                          placeholder="Image URL"
+                          name="image"
+                          type="img"
+                          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                          onChange={handleChange}
                       />
                     </div>  
                   </div>            
@@ -127,13 +154,12 @@ export default function EditRecipe({ state }) {
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <div className="mt-1">
                       <input
-                        id="ingredient"
-                        name="ingredient"
-                        type="ingredient"
-                        placeholder="Ingredient"  
-                        required
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        // onChange={(e) => setBeverageIngredient(e.target.value)}
+                          id="ingredient"
+                          name="ingredient"
+                          type="ingredient"
+                          placeholder="Ingredient"
+                          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                          onChange={handleChange}
                       />
                     </div>  
                   </div>
@@ -141,7 +167,7 @@ export default function EditRecipe({ state }) {
                   <div className="my-4 text-blueGray-500 text-lg leading-relaxed">  
                     <div className="mt-1">
                         <textarea id="instruction" name="instruction" placeholder="Instruction" rows="3" cols="40" className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                          // onChange={(e) => setInstruction(e.target.value)}
+                          onChange={handleChange}
                         ></textarea>
                     </div>
                   </div>
@@ -154,13 +180,12 @@ export default function EditRecipe({ state }) {
                     <button
                       className="w-1/3 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold font-medium text-spring-wood-500 bg-vin-rouge-500 hover:bg-vin-rouge-700 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500"
                       type="submit"
-                      // onClick={
-                      //   (e) => {
-                      //     setShowModal(false)
-                      //     setAdd(true)
-                      //     addBeverage(e)
-                      //   }
-                      // }
+                      onClick={
+                        () => {
+                          setShowModal(false)
+                          update()
+                        }
+                      }
                     >
                       Update
                     </button>

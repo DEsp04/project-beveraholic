@@ -1,13 +1,71 @@
-import React from 'react'
 import Layout from "../../components/layout/Layout"
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import EditRecipe from '../../components/editRecipe/EditRecipe';
+import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { fetchDrinks } from "../../redux/beveragesSlice";
+import { updateBeverage } from "../../redux/editBeverageSlice"
 
 
 
-export default function beverageInfo(props) {
+export default function BeverageInfo(props) {
 
-  console.log(props)
+  const { name, image, content, ingredient, instruction, beverageId } = props?.location?.state
+
+  const[item, setItem] = useState({name, image, content, ingredient, instruction, beverageId}) 
+  console.log("HERE IS ITEMS", item)
+
+  console.log("ONLY PROPS", props.location)
+
+  const state = useSelector((state) => state);
+  const editState =  useSelector((state) => state.editItem.editDrink);
+  // console.log(state.editItem.status)
+  console.log("HERE IS EDIT STATE", editState)
+  console.log("Here is PROPS", props.location.state.name)
+  
+  const [beverage, setBeverage] = useState({ isBeverage: props.location.pathname === "/beverageInfo"})
+
+  const deductBeverage = () => {
+    const beveragePath = props.location.pathname === "/beverageInfo";
+
+    if (!beveragePath) {
+      setBeverage(prevState => ({
+        ...prevState,
+        isBeverage: false
+      }));
+    }
+
+    if (beveragePath) {
+      setBeverage(prevState => ({
+        ...prevState,
+        isBeverage: true
+      }));
+    }
+  }
+
+  const dispatch = useDispatch();
+
+  const update = () => {
+    // e.preventDefault();
+
+    dispatch(updateBeverage({ item }))
+    props.setUpdated(true)
+        
+    {props.updated && <Redirect to="/home" /> }
+    console.log("hello")
+
+  }
+  
+
+  
+  useEffect(() => {
+    update()
+    deductBeverage()
+    return () => {
+      deductBeverage();
+    };
+
+  }, [beverage.isBeverage]);
   
 
   
@@ -16,7 +74,7 @@ export default function beverageInfo(props) {
   return (
     <Layout>
       <main className="py-10">
-        <EditRecipe state={props} />
+        <EditRecipe item={item} setItem={setItem} update={update}  />
 
         
 
@@ -62,7 +120,8 @@ export default function beverageInfo(props) {
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Name:</span> {props.location.state.name}</p>
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Category:</span> {props.location.state.category}</p>
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Alchohol Content:</span> {props.location.state.content}</p>
-              <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Ingredient:</span> {props.location.state.ingredient}</p>
+            <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Ingredient:</span> {props.location.state.ingredient}</p>
+            <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Instruction:</span> {props.location.state.instruction}</p>
             </div>
             {/* /End replace */}
           </div>

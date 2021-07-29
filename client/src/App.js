@@ -5,7 +5,7 @@ import Login from "./screens/login/Login";
 import Home from "./screens/home/home";
 import Favorites from "./screens/favorites/Favorites";
 import About from "./screens/about/about";
-import BeverageInfo from "./screens/beverageInfo/beverageInfo"
+import BeverageInfo from "./screens/beverageInfo/BeverageInfo"
 import User from "./screens/user/User";
 import PrivateRoute from "./routing/PrivateRoute";
 import Footer from "./components/footer/Footer";

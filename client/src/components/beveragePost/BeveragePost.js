@@ -8,8 +8,8 @@ import {  deleteBeverage } from "../../redux/deleteBeverageSlice"
 
 export default function BeveragePost(props) {
   // console.log(props._id)
-  // console.log(props)
-  const userId = useSelector((state) => state.loadedUser.loadedUser._id);
+  console.log("Here FROM BEVERAGE POST", props)
+  const userId = useSelector((state) => state?.loadedUser?.loadedUser?._id);
 
 
   const [id, setId] = useState("");
