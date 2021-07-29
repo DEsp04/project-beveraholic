@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 
-export async function updateDrink( { beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction, beverageId } ) {
+export async function updateDrink( { item } ) {
   
   const config = {
     headers: {
@@ -16,14 +16,14 @@ export async function updateDrink( { beverageName, imageUrl, category, alcoholCo
     config,
     method: "PUT",
     data: {
-      beverage_name: beverageName,
-      beverage_image: imageUrl,
-      beverage_category: category,
-      alcohol_content: alcoholContent,
-      ingredients: beverageIngredient,
-      instruction: instruction 
+      beverage_name: item.name,
+      beverage_image: item.image,
+      beverage_category: item.category,
+      alcohol_content: item.content,
+      ingredients: item.ingredient,
+      instruction: item.instruction 
     },
-    url: `https://beveraholicapp.herokuapp.com/api/beverages/${beverageId}`,
+    url: `https://beveraholicapp.herokuapp.com/api/beverages/${item.beverageId}`,
   }).then((res) => {
     // console.log(res)
     return res.data

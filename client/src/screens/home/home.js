@@ -21,6 +21,7 @@ export default function Home() {
   const newBeverageStatus = useSelector((state) => state.newBeverage.status)
   const deleteItemStatus = useSelector((state) => state.deleteItem.status)
 
+
   const userToken = localStorage.getItem("userToken");
 
   useEffect(() => {
@@ -38,8 +39,6 @@ export default function Home() {
     // }, 1000);
     // return () => clearTimeout(timer);
   }, [deleteItemStatus === "success"])
-
-
 
 
  
