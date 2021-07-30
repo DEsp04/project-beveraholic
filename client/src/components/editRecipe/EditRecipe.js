@@ -7,39 +7,14 @@ import { updateBeverage } from "../../redux/editBeverageSlice";
 
 export default function EditRecipe({ state, update, setItem, item }) {
   const [showModal, setShowModal] = useState(false);
-  // const beverageId = state.location.state.userId
 
-  // console.log("beverageId:", state.location.state.userId)
-  // console.log("userId:", state.location.state.beverageId)
-  // console.log(state.location.state)
-  
   const handleChange = (event) => {
     const updatedField = { [event.target.name]: event.target.value };
 
     const editedDrink = Object.assign(item, updatedField);
-
+    console.log(editedDrink)
     setItem(editedDrink);
   };
-
-
-  // const [beverageName, setBeverageName] = useState(state.location.state.name);
-  // const [category, setCategory] = useState(state.location.state.category);
-  // const [alcoholContent, setAlcoholContent] = useState(state.location.state.content);
-  // const [imageUrl, setImageUrl] = useState(state.location.state.image);
-  // const [beverageIngredient, setBeverageIngredient] = useState(state.location.state.ingredient);
-  // const [instruction, setInstruction] = useState(state.location.state.instruction);
-
-
-  // const dispatch = useDispatch();
-
- 
-  // const update = () => {
-  //   // e.preventDefault();
-
-  //   dispatch(updateBeverage({ beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction, beverageId }))
-  //   console.log("hello")
-
-  // }
 
 
 

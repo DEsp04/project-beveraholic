@@ -1,5 +1,5 @@
 import Layout from "../../components/layout/Layout"
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import EditRecipe from '../../components/editRecipe/EditRecipe';
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
@@ -13,7 +13,10 @@ export default function BeverageInfo(props) {
 
   const { name, image, content, ingredient, instruction, beverageId, category, userId } = props?.location?.state
 
-  const[item, setItem] = useState({name, image, content, ingredient, instruction, beverageId, category, userId}) 
+
+  const [item, setItem] = useState({ name, image, content, ingredient, instruction, beverageId, category, userId })
+  
+
   const [favorite,setFavorite]=useState({
     beverage_name: item.name,
     beverage_image: item.image,
@@ -52,13 +55,14 @@ export default function BeverageInfo(props) {
 
   
   useEffect(() => {
-    update()
+    // update()
 
   }, []);
+  
 
   const addItemToFavorite =async ()=>{
     await axios({
-      url: `http://localhost:5000/api/favorites`,
+      url: `https://beveraholicapp.herokuapp.com/api/favorites`,
       method: "POST",
       data:favorite
     })
@@ -67,8 +71,6 @@ export default function BeverageInfo(props) {
   
 
   
-
-
   return (
     <Layout>
       <main className="py-10">

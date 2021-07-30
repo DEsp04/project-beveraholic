@@ -34,10 +34,7 @@ export default function Home() {
   }, [newBeverageStatus === "success"])
 
   useEffect(() => {
-    // const timer = setTimeout(() => {
       dispatch(fetchDrinks());
-    // }, 1000);
-    // return () => clearTimeout(timer);
   }, [deleteItemStatus === "success"])
 
 

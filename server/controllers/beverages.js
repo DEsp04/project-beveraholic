@@ -77,9 +77,12 @@ const getBeverageByID = async (req, res) => {
 };
 
 const updateBeverage = async (req, res) => {
+  console.log(req.body)
+  const { id } = req.params 
+  console.log(id)
   try {
     const beverage = await Beverage.findOneAndUpdate(
-      { user: req.user.id },
+      { _id: id },
       req.body,
       { new: true }
     );
