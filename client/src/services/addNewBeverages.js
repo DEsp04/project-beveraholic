@@ -21,7 +21,8 @@ export async function addNewBeverage( { beverageName, imageUrl, category, alcoho
       ingredients: beverageIngredient,
       instruction: instruction 
     },
-    url: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBlOWQ2YWNhNjJmNDcwY2MzOGRmMTE0In0sImlhdCI6MTYyNzUwMTk3NiwiZXhwIjoxNjI3ODYxOTc2fQ.YG3tDe3puDjSxBnwdvhxB1bdqhkSxeQreydbecu0dpA",
+    // below url needs work******************
+    url: "https://beveraholicapp.herokuapp.com/api/beverages",
   }).then((res) => {
     // console.log(res)
     return res.data
