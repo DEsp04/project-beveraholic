@@ -14,15 +14,41 @@ export default function Favorites() {
 
 
 
-const getFavorite = async()=>{
-    const response =await axios.get(`http://localhost:5000/api/favorites/${userId}`)
-    console.log(response)
-}
+// const getFavorite = async()=>{
+//     const response =await axios.get(`https://beveraholicapp.herokuapp.com/api/favorites/${userId}`)
+//     console.log(response)
+// }
+  
+  
+// const getBeverageUser = async()=>{
+//   const response =await axios.get(`https://beveraholicapp.herokuapp.com/api/${userId}/beverages`)
+//   console.log(response)
+// }
+  
+// const addBeverage = async () => {
+//   await axios({
+//     url: `https://beveraholicapp.herokuapp.com/api/`,
+//     method: "POST",
+//     data: {
+//       beverage_name: "dave",
+//       beverage_image: "none",
+//       beverage_category: "cocktail",
+//       alcohol_content: "no-alcoholic",
+//       ingredients: "hardwork",
+//       instruction: "everything!!!" 
+//     },
+//   })
+//     .then((res) => console.log(res))
+
+//     .catch((err) => console.log(err));
+
+// };
 
   
 useEffect(()=>{
-  getFavorite()
-
+  // getFavorite()
+  // getBeverageUser()
+  // addBeverage()
 },[])
   return (
     <Layout>
