@@ -6,7 +6,7 @@ const { beverageValidator } = require("../validators/index");
 const auth = require("../config/authentication");
 
 beverageRouter.post(
-  "/beverages",
+  "/",
   auth,
   beverageValidator(),
   beverageControllers.createBeverage

@@ -9,6 +9,7 @@ const logger = require("morgan");
 
 const userRoutes = require("./routes/users");
 const beverageRoutes = require("./routes/beverages");
+const favoriteRouter =require("./routes/favorite");
 
 const app = express();
 
@@ -26,5 +27,6 @@ app.get("/", (req, res) => res.send("API is running!"));
 
 app.use("/api", userRoutes);
 app.use("/api", beverageRoutes);
+app.use("/api", favoriteRouter) 
 
 module.exports = app;
