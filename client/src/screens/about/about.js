@@ -65,9 +65,9 @@ export default function about() {
             <br></br>
             <div className="flex justify-center items-center flex-wrap mb-16">
               <br />
-              {team.map((member) => {
+              {team.map((member, index) => {
                 return (
-                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 md:mx-10 mx-0">
+                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 md:mx-10 mx-0" key={index}>
                     <img
                       className="h-40 w-auto rounded-none 100%"
                       src={member.teamImage}

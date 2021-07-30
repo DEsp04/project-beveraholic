@@ -24,6 +24,7 @@ export async function updateDrink( { item } ) {
       instruction: item.instruction 
     },
     url: `https://beveraholicapp.herokuapp.com/api/beverages/${item.beverageId}`,
+    // url: `http://localhost:5000/api/beverages/${item.beverageId}`
   }).then((res) => {
     // console.log(res)
     return res.data

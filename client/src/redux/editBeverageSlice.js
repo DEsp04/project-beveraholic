@@ -5,9 +5,6 @@ import { updateDrink } from "../services/editBeverage";
 export const updateBeverage = createAsyncThunk(
   "editBeverage/updateBeverage",
   async ({ item }) => {
-    
-    // console.log(beverageName, imageUrl, category, alcoholContent, beverageIngredient, instruction);
-      //  console.log(beverageId);
     console.log(item)
 
     const data = updateDrink({ item })
