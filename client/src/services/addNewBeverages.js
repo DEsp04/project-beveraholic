@@ -22,7 +22,7 @@ export async function addNewBeverage( { beverageName, imageUrl, category, alcoho
       instruction: instruction 
     },
     // below url needs work******************
-    url: "https://beveraholicapp.herokuapp.com/api/beverages",
+    url: "https://beveraholicapp.herokuapp.com/api/",
   }).then((res) => {
     // console.log(res)
     return res.data
