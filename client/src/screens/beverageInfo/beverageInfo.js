@@ -78,9 +78,7 @@ export default function BeverageInfo(props) {
   return (
     <Layout>
       <main className="py-10">
-        {/* <EditRecipe item={item} setItem={setItem} update={update}  /> */}
         {showEdit()}
-        
 
         <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
         <div className="mt-1 flex justify-center rounded-md mb-8">
