@@ -17,14 +17,13 @@ export default function BeverageInfo(props) {
   const [item, setItem] = useState({ name, image, content, ingredient, instruction, beverageId, category, userId })
   
 
-  const [favorite,setFavorite]=useState({
+  const [favorite, setFavorite] = useState({
     beverage_name: item.name,
     beverage_image: item.image,
-    beverage_category:item.category ,
-    alcohol_content:item.content ,
+    beverage_category: item.category,
+    alcohol_content: item.content,
     ingredients: item.ingredient,
-    instruction:item.instruction ,
-    
+    instruction: item.instruction,
     user_id: item.userId,
 
   })
@@ -33,13 +32,13 @@ export default function BeverageInfo(props) {
 
 
   const state = useSelector((state) => state);
-  const editState =  useSelector((state) => state.editItem.editDrink);
+  const editState = useSelector((state) => state.editItem.editDrink);
   // console.log(state.editItem.status)
   console.log("HERE IS EDIT STATE", editState)
   console.log("Here is PROPS", props.location.state.name)
   
 
-
+  console.log("STATE FROM BEVERAGEINFO", state.loadedUser.loadedUser._id)
   const dispatch = useDispatch();
 
   const update = () => {
@@ -51,13 +50,18 @@ export default function BeverageInfo(props) {
     console.log("hello")
 
   }
-  
 
-  
-  useEffect(() => {
-    // update()
-
-  }, []);
+  const showEdit = () => {
+    if (item.userId === state.loadedUser.loadedUser._id ) {
+      return (
+        <EditRecipe item={item} setItem={setItem} update={update}  />
+      )
+    } else {
+      return (
+        <div></div>
+      )
+    }
+  }
   
 
   const addItemToFavorite =async ()=>{
@@ -74,9 +78,7 @@ export default function BeverageInfo(props) {
   return (
     <Layout>
       <main className="py-10">
-        <EditRecipe item={item} setItem={setItem} update={update}  />
-
-        
+        {showEdit()}
 
         <div className="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8" >
         <div className="mt-1 flex justify-center rounded-md mb-8">

@@ -3,7 +3,7 @@ const FavoriteBeverage = require("../models/favoriteBeverage");
 
 
 
-const createFavorite = async(req,res)=>{
+const createFavorite = async(req, res)=>{
     try {
     
       const userId = await FavoriteBeverage.find({ user_id: req.body.userId });
@@ -28,10 +28,10 @@ const getAllFavorites = async (req, res) => {
     }
 }
 
-// const deleteBeverage = async (req, res) => {
+// const deleteFavorite = async (req, res) => {
 //     try {
 //       const { id } = req.params;
-//       const beverage = await Beverage.findById(id);
+//       const beverage = await FavoriteBeverage.findById(id);
 //       if (!beverage) {
 //         return res.status(404).json({ msg: "Beverage not found" });
 //       }
@@ -39,7 +39,7 @@ const getAllFavorites = async (req, res) => {
 //         return res.status(401).json({ msg: "User not authorized" });
 //       }
 //       await beverage.remove();
-//       res.json({ msg: "Beverage remove" });
+//       res.json({ msg: "Favorite Beverage remove" });
 //     } catch (error) {
 //       console.error(err.message);
 //       return res.status(500).send("Server Error");
