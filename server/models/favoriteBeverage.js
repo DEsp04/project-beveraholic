@@ -29,6 +29,7 @@ const FavoriteBeverage = new Schema(
       required: true,
     },
     user_id: { type: Schema.Types.ObjectId, ref: "users" },
+    beverage_id: { type: Schema.Types.ObjectId, ref:"beverages" }
   },
   { timestamps: true }
 );

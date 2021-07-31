@@ -20,7 +20,7 @@ export default function Favorites() {
   }
 
 
-  console.log(favoriteList)
+  console.log("Favorite List", favoriteList)
   
   const renderFavoriteList = () => {
     return favoriteList.map((favoriteItem, index) => {
