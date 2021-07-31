@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export default function FavoritePost(props) {
   
-  console.log("***********FavoritePost", props)
+  // console.log("***********FavoritePost", props)
   
   
   
