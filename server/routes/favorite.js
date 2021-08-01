@@ -14,7 +14,9 @@ favoriteRouter.post(
   favoriteControllers.createFavorite
 );
 
- favoriteRouter.get("/favorites/:id", favoriteControllers.getAllFavorites);
+favoriteRouter.get("/favorites/:id", favoriteControllers.getAllFavorites);
+
+favoriteRouter.get("/favorites", favoriteControllers.getFavorites);
 
 // favoriteRouter.get(
 //   "/:user_id/favorites",

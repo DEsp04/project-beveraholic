@@ -17,6 +17,8 @@ const createFavorite = async(req, res)=>{
       }
 }
 
+
+
 const getAllFavorites = async (req, res) => {
     try {
       const { id } = req.params;
@@ -27,6 +29,26 @@ const getAllFavorites = async (req, res) => {
       return res.status(500).json({ error: error.message });
     }
 }
+
+
+
+
+
+
+const getFavorites = async (req, res) => {
+  try {
+    console.log(req);
+    const beverages = await FavoriteBeverage.find()
+      .sort({
+        date: -1,
+      })
+      .populate("user", "username");
+    res.json(beverages);
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).send("Server Error");
+  }
+};
 
 const deleteFavorite = async (req, res) => {
    
@@ -50,5 +72,5 @@ const deleteFavorite = async (req, res) => {
   
     
 
-module.exports = {createFavorite , getAllFavorites, deleteFavorite}
+module.exports = {createFavorite , getAllFavorites, deleteFavorite, getFavorites}
 
