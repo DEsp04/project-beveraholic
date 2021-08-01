@@ -11,6 +11,8 @@ import axios from "axios";
 
 export default function BeverageInfo(props) {
 
+  console.log("BEVERAGEINFO", props)
+
   const { name, image, content, ingredient, instruction, beverageId, category, userId } = props?.location?.state
 
 
@@ -45,7 +47,7 @@ export default function BeverageInfo(props) {
     // e.preventDefault();
 
     dispatch(updateBeverage({ item }))
-    props.setUpdated(true)
+    // props.setUpdated(true)
         
     console.log("hello")
 

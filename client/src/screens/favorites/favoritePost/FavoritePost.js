@@ -5,12 +5,18 @@ import React, { useEffect, useState } from "react";
 
 export default function FavoritePost(props) {
   
-  console.log("***********FavoritePost", props._id)
+  // console.log("***********FavoritePost", props._id)
 
   const deleteFavoriteItem =async ()=>{
     await axios({
-      url: `https://beveraholicapp.herokuapp.com/api/favorites/${props._id}`,
+      url: `http://localhost:5000/api/favorites/${props._id}`,
       method: "DELETE",
+    }).then((res) => {
+      // console.log(res)
+      return res.data
+    }).catch((error) => {
+      // handle error
+      console.log(error);
     })
 
   }

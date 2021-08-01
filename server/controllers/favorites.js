@@ -29,13 +29,15 @@ const getAllFavorites = async (req, res) => {
 }
 
 const deleteFavorite = async (req, res) => {
+   
     try {
       const { id } = req.params;
       const beverage = await FavoriteBeverage.findById(id);
+
       if (!beverage) {
         return res.status(404).json({ msg: "Beverage not found" });
       }
-      if (beverage.user.toString() !== req.user.id) {
+      if (beverage.user_id.toString() !== req.user.id) {
         return res.status(401).json({ msg: "User not authorized" });
       }
       await beverage.remove();
