@@ -27,7 +27,7 @@ export default function Favorites() {
       (value,index,array)=>{
         return array.findIndex(
             object=> {
-                return object.name===value.name
+                return object.beverage_id===value.beverage_id
                 }
             )===index
         }
