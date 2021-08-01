@@ -14,7 +14,9 @@ favoriteRouter.post(
   favoriteControllers.createFavorite
 );
 
- favoriteRouter.get("/favorites/:id", favoriteControllers.getAllFavorites);
+favoriteRouter.get("/favorites/:id", favoriteControllers.getAllFavorites);
+
+favoriteRouter.get("/favorites", favoriteControllers.getFavorites);
 
 // favoriteRouter.get(
 //   "/:user_id/favorites",
@@ -26,10 +28,12 @@ favoriteRouter.post(
 
 
 
-// favoriteRouter.delete(
-//   "/favorites/:id",
-//   auth,
-//   favoriteControllers.deleteFavorite
-// );
+favoriteRouter.delete(
+  "/favorites/:id",
+  auth,
+  favoriteControllers.deleteFavorite
+);
+
+
 
 module.exports = favoriteRouter;

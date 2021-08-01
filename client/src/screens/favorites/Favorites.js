@@ -7,18 +7,20 @@ import FavoritePost from "./favoritePost/FavoritePost"
 
 export default function Favorites() {
   const [favoriteList, setFavoriteList] = useState([])
+  const [refreshPage, setFreshPage] = useState(false)
 
   const userId = useSelector((state) => state.loadedUser.loadedUser._id);
   console.log("THIS IS COMING FROM FAVORITES", userId)
 
-
+  console.log(refreshPage)
 
   const getFavorite = async () => {
-    const response = await axios.get(`https://beveraholicapp.herokuapp.com/api/favorites/${userId}`)
+    const response = await axios.get(`https://beveraholicapp.herokuapp.com/api/favorites`)
     console.log(response)
     setFavoriteList(response.data)
   }
 
+  
 
   console.log("Favorite List", favoriteList)
   
@@ -27,12 +29,12 @@ export default function Favorites() {
       (value,index,array)=>{
         return array.findIndex(
             object=> {
-                return object.name===value.name
+                return object.beverage_id===value.beverage_id
                 }
             )===index
         }
     ).map((favoriteItem, index) => {
-      return <FavoritePost {...favoriteItem} key={index} />
+      return <FavoritePost {...favoriteItem} key={index} refreshPage={setFreshPage} />
     })
 
   }
@@ -40,8 +42,7 @@ export default function Favorites() {
   
 useEffect(()=>{
   getFavorite()
-  
-}, [])
+}, [refreshPage])
   
   
   return (
