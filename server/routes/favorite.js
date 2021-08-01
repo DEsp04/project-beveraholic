@@ -26,10 +26,10 @@ favoriteRouter.post(
 
 
 
-// favoriteRouter.delete(
-//   "/favorites/:id",
-//   auth,
-//   favoriteControllers.deleteFavorite
-// );
+favoriteRouter.delete(
+  "/favorites/:id",
+  auth,
+  favoriteControllers.deleteFavorite
+);
 
 module.exports = favoriteRouter;

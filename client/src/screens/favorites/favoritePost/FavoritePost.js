@@ -1,19 +1,41 @@
-import React from 'react'
 import { NavLink } from "react-router-dom";
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 
 export default function FavoritePost(props) {
   
-  // console.log("***********FavoritePost", props)
-  
+  console.log("***********FavoritePost", props._id)
+
+  const deleteFavoriteItem =async ()=>{
+    await axios({
+      url: `https://beveraholicapp.herokuapp.com/api/favorites/${props._id}`,
+      method: "DELETE",
+    })
+
+  }
+
+
+
+  const deleteButton = () => {
+      return <div className="xbutton flex items-start justify-between pt-2 rounded-t">
+        <button
+          className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          onClick={deleteFavoriteItem}
+        >
+          <span className="text-xxxl bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none text-spring-wood-500">
+            ×
+          </span>
+        </button>
+      </div>
+  }
   
   
   
   return (
     <div className="text-center rounded-md px-10 m-1 p-2 bg-shark-500 md:mx-10 mx-0 w-auto">
       
-      {/* {deleteButton()} */}
+      {deleteButton()}
 
       <div>
         <img
