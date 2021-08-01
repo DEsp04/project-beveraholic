@@ -25,7 +25,7 @@ export default function BeverageInfo(props) {
     ingredients: item.ingredient,
     instruction: item.instruction,
     user_id: item.userId,
-
+    beverage_id: item.beverageId
   })
 
   console.log("HERE IS ITEMS", item)

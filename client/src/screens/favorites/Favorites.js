@@ -23,7 +23,15 @@ export default function Favorites() {
   console.log("Favorite List", favoriteList)
   
   const renderFavoriteList = () => {
-    return favoriteList.map((favoriteItem, index) => {
+    return favoriteList.filter(
+      (value,index,array)=>{
+        return array.findIndex(
+            object=> {
+                return object.name===value.name
+                }
+            )===index
+        }
+    ).map((favoriteItem, index) => {
       return <FavoritePost {...favoriteItem} key={index} />
     })
 
