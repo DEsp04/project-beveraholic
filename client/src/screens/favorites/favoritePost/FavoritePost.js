@@ -9,7 +9,7 @@ export default function FavoritePost(props) {
 
   const deleteFavoriteItem =async ()=>{
     await axios({
-      url: `http://localhost:5000/api/favorites/${props._id}`,
+      url: `https://beveraholicapp.herokuapp.com/api/favorites/${props._id}`,
       method: "DELETE",
     }).then((res) => {
       // console.log(res)
@@ -19,6 +19,7 @@ export default function FavoritePost(props) {
       console.log(error);
     })
 
+    props.refreshPage(prevCheck => !prevCheck)
   }
 
 
