@@ -15,8 +15,7 @@ export default function Favorites() {
   console.log(refreshPage)
 
   const getFavorite = async () => {
-    // const response = await axios.get(`https://beveraholicapp.herokuapp.com/api/favorites`)
-    const response = await axios.get(`http://localhost:5000/api/favorites`)
+    const response = await axios.get(`https://beveraholicapp.herokuapp.com/api/favorites`)
     console.log(response)
     setFavoriteList(response.data)
   }

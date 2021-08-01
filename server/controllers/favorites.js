@@ -59,9 +59,9 @@ const deleteFavorite = async (req, res) => {
       if (!beverage) {
         return res.status(404).json({ msg: "Beverage not found" });
       }
-      if (beverage.user_id.toString() !== req.user.id) {
-        return res.status(401).json({ msg: "User not authorized" });
-      }
+      // if (beverage.user_id.toString() !== req.user.id) {
+      //   return res.status(401).json({ msg: "User not authorized" });
+      // }
       await beverage.remove();
       res.json({ msg: "Favorite Beverage remove" });
     } catch (error) {

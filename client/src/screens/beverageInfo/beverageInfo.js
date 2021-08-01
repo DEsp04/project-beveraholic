@@ -68,8 +68,7 @@ export default function BeverageInfo(props) {
 
   const addItemToFavorite =async ()=>{
     await axios({
-      // url: `https://beveraholicapp.herokuapp.com/api/favorites`,
-      url: `http://localhost:5000/api/favorites`,
+      url: `https://beveraholicapp.herokuapp.com/api/favorites`,
       method: "POST",
       data:favorite
     })
