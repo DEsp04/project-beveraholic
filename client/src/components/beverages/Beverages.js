@@ -7,7 +7,7 @@ import { SearchIcon } from "@heroicons/react/solid";
 
 
 
-
+//hi
 
 
 export default function Beverages() {
