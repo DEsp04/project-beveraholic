@@ -13,7 +13,7 @@ const navigation = [
   { name: " About", to: "/about-us", current: false },
 ];
 
-const userNavigation = [{ name: "Log out", to: "/login" }];
+const userNavigation = [{ name: "Log out", to: "/" }];
 
 const dropDown = (...classes) => {
   return classes.filter(Boolean).join(" ");
@@ -46,16 +46,25 @@ export default function Header() {
               <div className="flex justify-between h-16">
                 <div className="flex">
                   <div className="flex-shrink-0 flex items-center">
+                  <NavLink
+                    to="/home"
+                    >
                     <img
                       className="block lg:hidden h-10 w-auto"
                       src={icon}
                       alt="Beveraholic"
-                    />
+                      />
+                  </NavLink>
+                    
+                    <NavLink
+                    to="/home"
+                    >
                     <img
                       className="hidden lg:block h-14 w-auto"
                       src={logo}
                       alt="Beveraholic"
-                    />
+                      />
+                  </NavLink>     
                   </div>
                   <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                     {navigation.map((item) => (
