@@ -40,7 +40,7 @@ export default function Modal() {
       {showModal ? (
         <>
           <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none xxs:mx-2 xs:mx-2"
           >
             <div className="relative w-auto my-6 mx-auto max-w-md bg-shark-500 rounded-md w-full">
               {/*content*/}
