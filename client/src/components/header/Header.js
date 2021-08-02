@@ -102,7 +102,7 @@ export default function Header() {
                                   <a
                                     href={item.to}
                                     className={dropDown(
-                                      active ? "bg-gray-100" : "",
+                                      active ? "bg-vin-rouge-500 text-white-500" : "",
                                       "block px-4 py-2 text-sm text-gray-700"
                                     )}
                                     onClick={logOut}
@@ -120,7 +120,7 @@ export default function Header() {
                 </div>
                 <div className="-mr-2 flex items-center sm:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <Disclosure.Button className="bg-vin-rouge-500 inline-flex items-center justify-center p-2 rounded-md text-white-500 hover:bg-vin-rouge-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -141,7 +141,7 @@ export default function Header() {
                     className={dropDown(
                       item.current
                         ? "bg-indigo-50 border-indigo-500 text-indigo-700"
-                        : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800",
+                        : "border-transparent text-gray-600 hover:bg-vin-rouge-500 hover:border-white-500 hover:text-white-500",
                       "block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -173,7 +173,7 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.to}
-                      className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                      className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-white-500 hover:bg-vin-rouge-500"
                       onClick={logOut}
                     >
                       {item.name}
