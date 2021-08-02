@@ -28,7 +28,7 @@ export default function Modal() {
   return (
     <>
       <button
-        className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+        className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500 xs:mt-4 xs:w-1/3 xs:text-sm xxs:mt-4 xxs:w-2/5 xxs:text-sm xxs:bg-vin-rouge-500 xxs:text-white-500"
         type="button"
         onClick={() => setShowModal(true)}
       >
