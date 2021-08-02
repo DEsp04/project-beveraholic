@@ -74,7 +74,7 @@ export default function BeveragePost(props) {
       <div className="flex items-center justify-center p-6 pt-2 rounded-b">
               <NavLink
         to={{
-          pathname: "/beverage-info",
+          pathname: "/beverage-detail",
             state: props
               ? {
                 name: props.beverage_name,
