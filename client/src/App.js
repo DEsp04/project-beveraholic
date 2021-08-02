@@ -28,7 +28,7 @@ function App() {
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/favorites" component={Favorites} />
           <PrivateRoute exact path="/about-us" component={About} />
-          <PrivateRoute exact path="/beverageInfo" component={BeverageInfo} />
+          <PrivateRoute exact path="/beverage-info" component={BeverageInfo} />
           
           {/* <Route exact path="/user-profile">
             <User />
