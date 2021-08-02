@@ -28,7 +28,10 @@ export default function Modal() {
   return (
     <>
       <button
-        className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+        className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500  text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500 
+        sm:text-sm sm:ml-2
+        xs:mt-4 xs:w-1/3 xs:text-sm xs:bg-vin-rouge-500 xs:text-white-500
+        xxs:mt-4 xxs:w-2/5 xxs:text-sm xxs:bg-vin-rouge-500 xxs:text-white-500"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -37,7 +40,7 @@ export default function Modal() {
       {showModal ? (
         <>
           <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none xxs:mx-2 xs:mx-2"
           >
             <div className="relative w-auto my-6 mx-auto max-w-md bg-shark-500 rounded-md w-full">
               {/*content*/}

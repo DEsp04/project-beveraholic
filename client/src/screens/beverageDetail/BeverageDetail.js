@@ -9,7 +9,7 @@ import axios from "axios";
 
 
 
-export default function BeverageInfo(props) {
+export default function BeverageDetail(props) {
 
   console.log("BEVERAGEINFO", props)
 
@@ -97,7 +97,7 @@ export default function BeverageInfo(props) {
             </NavLink>      
 
             <button
-              className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500"
+              className="md:mx-10 mx-0 bg-transparent border border-gray-300 rounded-md font-bold py-2 px-4 text-vin-rouge-500 sm:text-sm text-yellow  hover:bg-vin-rouge-500 hover:text-white-500 hover:border-vin-rouge-500 xxs:ml-1 xs:ml-1 sm:ml-1"
               type="button"
               onClick={addItemToFavorite}
             >
@@ -112,7 +112,7 @@ export default function BeverageInfo(props) {
             <div className="px-4 py-8 sm:px-0">
               <h2  className="text-center text-iv font-bold">{item.name}</h2>
 
-              <div className="text-center rounded-md px-4 m-1 p-2 border border-vin-rouge-500 w-26 h-50 mx-auto">
+              <div className="text-center rounded-md px-4 m-1 p-2 border border-vin-rouge-500 w-26 h-50 mx-auto xxs:w-auto ">
                 <img
                   src={item.image}
                 alt=""
@@ -120,7 +120,7 @@ export default function BeverageInfo(props) {
                 />
               </div>
             </div>
-            <div>
+            <div className="xxs:mx-4 xs:mx-2">
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Name:</span> {item.name}</p>
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Category:</span> {item.category}</p>
               <p className="my-4"><span className="bg-vin-rouge-500 text-spring-wood-500 rounded-sm px-2 py-1">Alchohol Content:</span> {item.content}</p>

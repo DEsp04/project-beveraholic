@@ -39,7 +39,7 @@ export default function FavoritePost(props) {
   
   
   return (
-    <div className="text-center rounded-md px-10 m-1 p-2 bg-shark-500 md:mx-10 mx-0 w-auto">
+    <div className="text-center xxs:w-64 xs:w-64 sm:w-64  md:w-auto rounded-md px-10 m-1 p-2 bg-shark-500 md:mx-10 mx-0 w-auto">
       
       {deleteButton()}
 

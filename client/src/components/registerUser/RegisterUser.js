@@ -35,12 +35,12 @@ export default function Registration() {
 
   return (
     <div className="min-h-screen bg-soapstone-500 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md xs:mx-auto xs:w-full xs:max-w-md">
         <img className="mx-auto h-24 w-auto" src={logo} alt="Beveraholic" />
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-shark-500 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md xs:mx-auto xs:w-4/5 xs:max-w-md">
+        <div className="bg-shark-500 py-8 px-4 shadow sm:rounded-lg sm:px-10 xs:rounded-lg xs:px-10">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <h2 className="mt-6 text-center text-iv font-extrabold text-spring-wood-500">

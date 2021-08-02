@@ -40,7 +40,7 @@ export default function Beverages() {
     <div>
       
       {/* render beverage list below */}
-      <div className="flex justify-start items-center flex-wrap mb-16">
+      <div className="flex xxs:flex-col xs:flex-col sm:flex-col md:flex-row md:justify-start items-center flex-wrap mb-16">
         {renderList()}
       </div>
     </div>

@@ -63,13 +63,13 @@ export default function about() {
             <br></br>
             <h1 className="text-center text-xxxl font-semibold">The Team:</h1>
             <br></br>
-            <div className="flex justify-center items-center flex-wrap mb-16">
+            <div className="flex xxs:flex-col xs:flex-col sm:flex-col md:flex-row md:justify-start items-center flex-wrap mb-16">
               <br />
               {team.map((member, index) => {
                 return (
-                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 md:mx-10 mx-0" key={index}>
+                  <div className="text-center rounded-md px-4 m-1 p-2 bg-vin-rouge-500 md:mx-10 mx-0 xxs:w-64 xs:w-64 sm:w-64  md:w-auto" key={index}>
                     <img
-                      className="h-40 w-auto rounded-none 100%"
+                      className="h-40 w-auto rounded-none 100% xxs: mx-auto  xs:mx-auto sm:mx-auto xxs: mt-4  xs:mt-4 sm:mt-4"
                       src={member.teamImage}
                       alt=""
                     />
