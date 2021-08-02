@@ -24,7 +24,7 @@ const PrivateRoute = ({
      isAuthenticate === "true" || status === "success" ? (
         <Component updated={updated} setUpdated={setUpdated} {...props} />
       ) : (
-        <Redirect to="/login" />
+        <Redirect to="/" />
       )
     }
   />

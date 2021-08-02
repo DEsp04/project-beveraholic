@@ -1,16 +1,11 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { useSelector, useDispatch } from "react-redux";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../images/logos/beveraholic_logo.svg";
 import icon from "../../images/logos/beveraholic_icon.svg";
 
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
 
 const navigation = [
   { name: "Home", to: "/home", current: false },
@@ -18,7 +13,7 @@ const navigation = [
   { name: " About", to: "/about-us", current: false },
 ];
 
-const userNavigation = [{ name: "Log out", to: "/login" }];
+const userNavigation = [{ name: "Log out", to: "/" }];
 
 const dropDown = (...classes) => {
   return classes.filter(Boolean).join(" ");
@@ -29,6 +24,19 @@ const logOut = () => {
 }
 
 export default function Header() {
+  const userStatus = useSelector((state) => state);
+  console.log("HEADER***", userStatus)
+
+  const userNam = userStatus?.loadedUser?.loadedUser?.username
+  const emailAddr = userStatus?.loadedUser?.loadedUser?.email
+
+  const user = {
+    name: userNam,
+    emailAdress: emailAddr,
+    imageUrl:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  };
+
   return (
     <div className="min-h-full bg-albescent-white-500">
       <Disclosure as="nav" className="bg-white border-b border-albescent-white-500">
@@ -38,16 +46,25 @@ export default function Header() {
               <div className="flex justify-between h-16">
                 <div className="flex">
                   <div className="flex-shrink-0 flex items-center">
+                  <NavLink
+                    to="/home"
+                    >
                     <img
                       className="block lg:hidden h-10 w-auto"
                       src={icon}
                       alt="Beveraholic"
-                    />
+                      />
+                  </NavLink>
+                    
+                    <NavLink
+                    to="/home"
+                    >
                     <img
                       className="hidden lg:block h-14 w-auto"
                       src={logo}
                       alt="Beveraholic"
-                    />
+                      />
+                  </NavLink>     
                   </div>
                   <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                     {navigation.map((item) => (
@@ -164,7 +181,7 @@ export default function Header() {
                       {user.name}
                     </div>
                     <div className="text-sm font-medium text-gray-500">
-                      {user.email}
+                      {user.emailAdress}
                     </div>
                   </div>
                 </div>
