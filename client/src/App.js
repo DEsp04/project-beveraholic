@@ -5,7 +5,7 @@ import Login from "./screens/login/Login";
 import Home from "./screens/home/home";
 import Favorites from "./screens/favorites/Favorites";
 import About from "./screens/about/about";
-import BeverageInfo from "./screens/beverageInfo/BeverageInfo"
+// import BeverageInfo from "./screens/beverageInfo/BeverageInfo"
 import User from "./screens/user/User";
 import PrivateRoute from "./routing/PrivateRoute";
 import Footer from "./components/footer/Footer";
@@ -28,7 +28,7 @@ function App() {
           <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/favorites" component={Favorites} />
           <PrivateRoute exact path="/about-us" component={About} />
-          <PrivateRoute exact path="/beverage-info" component={BeverageInfo} />
+          {/* <PrivateRoute exact path="/beverage-info" component={BeverageInfo} /> */}
           
           {/* <Route exact path="/user-profile">
             <User />
