@@ -40,7 +40,7 @@ export default function Registration() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md xs:mx-auto xs:w-4/5 xs:max-w-md">
-        <div className="bg-shark-500 py-8 px-4 shadow sm:rounded-lg sm:px-10 xs:rounded-lg xs:px-10">
+        <div className="bg-shark-500 py-8 px-4 shadow sm:rounded-lg sm:px-10 xs:rounded-lg xxs:rounded-lg sm:round-lg xs:px-10 xxs:mx-2 xs:mx-2 sm:mx-2">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <h2 className="mt-6 text-center text-iv font-extrabold text-spring-wood-500">
