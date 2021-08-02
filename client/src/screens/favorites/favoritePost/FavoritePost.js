@@ -57,7 +57,7 @@ export default function FavoritePost(props) {
       <div className="flex items-center justify-center p-6 pt-2 rounded-b">
               <NavLink
         to={{
-          pathname: "/beverageInfo",
+          pathname: "/beverage-detail",
             state: props
               ? {
                 name: props.beverage_name,
