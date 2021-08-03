@@ -12,6 +12,7 @@ export default function Registration() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [showAlert, setShowAlert] = useState(true);
  
   const registerStatus = useSelector((state) => state.registeredUser.status);
   const dispatch = useDispatch();
@@ -21,15 +22,33 @@ export default function Registration() {
 
 
   const register = (e) => {
+    setShowAlert(true)
     e.preventDefault()
-
     dispatch(fetchRegisterUser( {registerUsername, registerEmail, registerPassword} ));
   };
 
   console.log(registerStatus)
 
+
+
   if (registerStatus === "success") {
     return <Redirect to="/login" />
+  }
+
+  const alertModal = () => {
+    if (registerStatus === "failed" && showAlert) {
+      return (
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <strong class="font-bold">Registration Request Failed!</strong>
+        <span class="block sm:inline"> Enter your username, email address, and password to register.</span>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3"  onClick={() => setShowAlert(false)}>
+            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+            </svg>
+        </span>
+        </div>
+      )
+    }
   }
 
 
@@ -40,6 +59,9 @@ export default function Registration() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md xs:mx-auto xs:w-4/5 xs:max-w-md">
+
+        { alertModal() }
+
         <div className="bg-shark-500 py-8 px-4 shadow sm:rounded-lg sm:px-10 xs:rounded-lg xxs:rounded-lg sm:round-lg xs:px-10 xxs:mx-2 xs:mx-2 sm:mx-2">
           <form className="space-y-6" action="#" method="POST">
             <div>
