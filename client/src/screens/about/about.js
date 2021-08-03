@@ -63,7 +63,7 @@ export default function about() {
             <br></br>
             <h1 className="text-center text-xxxl font-semibold">The Team:</h1>
             <br></br>
-            <div className="flex xxs:flex-col xs:flex-col sm:flex-col md:flex-row md:justify-start items-center flex-wrap mb-16">
+            <div className="flex xxs:flex-col xs:flex-col sm:flex-col md:flex-row md:justify-start xl:justify-center items-center flex-wrap mb-16">
               <br />
               {team.map((member, index) => {
                 return (
