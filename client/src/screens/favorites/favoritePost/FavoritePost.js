@@ -43,9 +43,9 @@ export default function FavoritePost(props) {
       
       {deleteButton()}
 
-      <div>
+      <div className="md:w-160px">
         <img
-           className="h-40 w-full rounded-md 100%"
+           className="h-40 xxs:w-full xs:w-full sm:w-full md:w-full rounded-md"
           src={props.beverage_image}
           alt=""
         />
