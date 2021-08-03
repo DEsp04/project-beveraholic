@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "../../../components/beveragePost/beveragePost.css"
 
 
 export default function FavoritePost(props) {
@@ -43,7 +44,7 @@ export default function FavoritePost(props) {
       
       {deleteButton()}
 
-      <div className="md:w-160px">
+      <div className="imgDiv">
         <img
            className="h-40 xxs:w-full xs:w-full sm:w-full md:w-full rounded-md"
           src={props.beverage_image}
