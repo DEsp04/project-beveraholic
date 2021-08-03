@@ -60,7 +60,7 @@ export default function BeveragePost(props) {
       
       {deleteButton()}
 
-      <div class="md:w-160px">
+      <div class="imgDiv">
         <img
            className="h-40 xxs:w-full xs:w-full sm:w-full md:w-full rounded-md"
           src={props.beverage_image}
