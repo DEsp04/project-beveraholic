@@ -6,10 +6,9 @@ import Home from "./screens/home/home";
 import Favorites from "./screens/favorites/Favorites";
 import About from "./screens/about/about";
 import BeverageDetail from "./screens/beverageDetail/BeverageDetail"
-import User from "./screens/user/User";
 import PrivateRoute from "./routing/PrivateRoute";
 import Footer from "./components/footer/Footer";
-//hi
+
 
 function App() {
 
@@ -30,9 +29,6 @@ function App() {
           <PrivateRoute exact path="/about-us" component={About} />
           <PrivateRoute exact path="/beverage-detail" component={BeverageDetail} />
           
-          {/* <Route exact path="/user-profile">
-            <User />
-          </Route> */}
         </Switch>
       </main>
       <Footer />
